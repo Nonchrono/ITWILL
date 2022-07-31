@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* mystyle05.css */
+/* 참조 05_다양한 selector */
+/* 참조 https://www.w3schools.com */
+
+p {
+    font-family: 궁서체;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+}
+/* 모든 <p> 요소 */
+
+div p {
+    background-color: red;
+}
+/* <div> 안에 있는 모든 <p> 요소 */
+
+h2, p {
+    color: blue;
+}
+/* 모든<h2>, 모든<p> */
+
+div h2 {
+    text-shadow: 2px 2px green;
+}
+/* 개나리에 글자 그림자 넣기 */
+
+
+#mybox {
+    width: 320px;
+    padding: 10px;
+    /* 내용의 안쪽여백을 상하좌우 모두 10px */
+    border: 5px solid black;
+    margin: auto;
+    /* 수평을 기준으로 가운데 정렬 */
+}
+/* Box Model */
+
+div > span > p {
+    text-decoration-line: line-through;
+    text-decoration-color: yellow;
+}
+/* 부모 > 자식 */
+/* 꺾새는 여러개 나올 수 있다 */
+
+/* 해바라기 접근 */
+div > span > h2 {
+    color: hotpink;
+}
+
+#menu {
+    width: 100px;
+    height: 100px;
+    background: gray;
+}
+
+.hide {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+/* 구조에는 있는데 표시는 안 됨 */
