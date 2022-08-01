@@ -63,3 +63,33 @@ div > span > h2 {
     font-size: 0;
 }
 /* 구조에는 있는데 표시는 안 됨 */
+
+#nav {
+    width: 300px;
+    height: 500px;
+    background: beige;
+    margin: auto; /* 가운데 정렬*/
+}
+
+#nav > ul { /* nav의 자식 중에서 ul 태그 */
+    list-style: none;
+}
+/* 크롤링의 기본 */
+
+#nav .news { /* id=nav 안에서 모든 class=news */
+    background: olive;
+    font-weight: bold;
+}
+
+#nav > ol > li:nth-child(2) {
+    font-weight: bold;
+}
+/* 2번째 요소만 적용 */
+
+#nav > ol > li > a{
+    width: 200px;
+    height: 100px;
+    background-color: hotpink;
+    text-decoration-style: wavy;
+}
+/* 아이티윌 링크만 css 적용 */
