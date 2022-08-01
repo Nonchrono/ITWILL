@@ -19,7 +19,7 @@
             #s1 li:nth-child(3) {background: blue;} */
 
             /* 2) 화면 하단에 고정 */
-            #s1 ul {background-color: yellow;}
+            /* #s1 ul {background-color: yellow;}
             #s1 li:nth-child(1) {background: red;}
             #s1 li:nth-child(2) {background: green;
                                 position: fixed;
@@ -27,7 +27,18 @@
                                 height: 80px;
                                 width: 100%;
                                 }
+            #s1 li:nth-child(3) {background: blue;} */
+
+            /* 3) 부모 포지션 지정 */
+            #s1 ul {background-color: yellow; position: relative; height: 300px;}
+            #s1 li:nth-child(1) {background: red;}
+            #s1 li:nth-child(2) {background: green;
+                                position: fixed;
+                                bottom: 0;
+                                height: 80px;
+                                width: 100%;}
             #s1 li:nth-child(3) {background: blue;}
+
         </style>
     </head>
     <body>
