@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>10_relative.html</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            /* 1) 요소의 자기 위치가 살아있음 */
+            /* #s1 ul {background: yellow; height: 300px; width: 300px; position: relative;}
+            #s1 li:nth-child(1) {background-color: red; position: relative; left: 50px; top: 30px;}
+            #s1 li:nth-child(2) {background-color: green;}
+            #s1 li:nth-child(3) {background-color: blue;} */
+
+            /* 부모의 위치를 지정 */
+            #s1 ul {background: yellow; height: 300px; width: 300px; position: relative; left : 50px; top: 50px;}
+            #s1 li:nth-child(1) {background-color: red; position: relative; --left: 50px; right: 50px; top: 30px;}
+            #s1 li:nth-child(2) {background-color: green;}
+            #s1 li:nth-child(3) {background-color: blue;}
+        </style>
+    </head>
+    <body>
+        <!-- 상대적 위치 position : relative -->
+        <selection id="s1">
+            <h3>position:relative</h3>
+            <ul>
+                <li>손흥민</li>
+                <li>박지성</li>
+                <li>김연아</li>
+            </ul>
+        </selection>
+    </body>
+</html>

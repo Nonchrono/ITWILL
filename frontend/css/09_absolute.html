@@ -16,7 +16,7 @@
 
             /* 2) 부모 영역을 기준으로 positon:relative */
             /* 부모 ul, 자식 li */
-            #s1 ul {background-color: yellow; height: 300px; position: relative;}
+            /* #s1 ul {background-color: yellow; height: 300px; position: relative;}
             #s1 li:nth-child(1) {background-color: red;
                                 position:absolute;
                                 --left: 0;
@@ -24,9 +24,13 @@
                                 right: 0;
                                 bottom: 0;}
             #s1 li:nth-child(2) {background-color: green;}
-            #s1 li:nth-child(3) {background-color: blue;}
+            #s1 li:nth-child(3) {background-color: blue;} */
 
-            ul 
+            /* 3) */
+            #s1 ul {background-color: yellow; height: 300px; width: 300px; position: relative;}
+            #s1 li:nth-child(1) {background-color: red; position: absolute; right: 0; bottom: 0; width: 100%;}
+            #s1 li:nth-child(2) {background-color: green;}
+            #s1 li:nth-child(3) {background-color: blue;}
         </style>
     </head>
     <body>
