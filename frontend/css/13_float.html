@@ -3,7 +3,17 @@
     <head>
         <title>13_float.html</title>
         <style>
+            /* 1)
             div {border: 1px solid blue; width: 100px; height: 100px;}
+            */
+
+            /* 2) div 블럭요소의 세로 배치를 가로 배치로 변경 */
+            div {border: 1px solid blue; width: 100px; height: 100px; float: left;}
+
+            .box4{float: right;}
+
+            .box1{background-color: yellow;}
+
         </style>
     </head>
     <body>
@@ -20,8 +30,12 @@
 
 
         <!-- float : 레이어 배치하기 -->
-        <div>box 1</div>
+        <div class="box1">box 1</div>
         <div>box 2</div>
         <div>box 3</div>
+
+        <div class="box4">box 4</div>
+
+        
     </body>
 </html>
