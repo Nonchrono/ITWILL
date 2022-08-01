@@ -93,3 +93,16 @@ div > span > h2 {
     text-decoration-style: wavy;
 }
 /* 아이티윌 링크만 css 적용 */
+
+/*
+   참조 https://www.w3schools.com/cssref/sel_active.asp
+   a:link     - 일반적 링크 및 방문하지 않은 링크
+   a:visited  - 방문했던 링크
+   a:hover    - 마우스 올렸을 때 링크
+   a:active   - 마우스 누르는 순간의 링크
+*/
+
+a:link {color: black; text-decoration: none;}
+a:visited {color: black; text-decoration: none;}
+a:hover {color: black; text-decoration: underline;}
+a:active {color: black; text-decoration: none;}
