@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>18_rotate.html</title>
+        <style>
+            #menu {
+                position: relative;         /* 부모. 이 상자를 기준으로 움직일 것이기 때문*/
+                width: 150px;
+                height: 130px;
+                background-color: silver;
+                margin: auto;               /* 수평을 기준으로 가운데 정렬 */
+                border-radius: 10px;        /* 모서리 라운드 처리 */
+                cursor: pointer;            /* 커서 손모양 */
+            }
+
+            #menu:hover {
+                background-color: orange;
+            } 
+            /* 마우스 올려놓으면 */
+
+            #menu>strong {
+                position: absolute; /* 자식. 원래 나의 위치도 사라짐  부모 안에서만 움직임*/
+                left: 38px;
+                bottom: 15px;
+            }
+            
+            /* 이미지 삽입 */
+            #menu>.gear{
+                position: absolute;
+                background-image: url(../images/gear-gray.png);
+                width: 40px;
+                height: 40px;
+                background-size: 40px 40px;
+            }
+            /* background size 조절을 안 하면 귀퉁이만 보임 */
+
+            /* 톱니바퀴 이미지 배치하기 */
+            #menu>.gear:nth-child(1){
+                top: 16px;
+                left: 46px;
+            }
+
+            /* 시계방향으로 30도 회전 */
+            #menu>.gear:nth-child(2){
+                top: 47px;
+                left: 64px;
+                transform: rotate(30deg);
+            }
+            
+            /* 마우스가 바탕색(실버)에 오버가 되면 이미지를 오렌지색 이미지로 변경 */
+            #menu:hover>.gear{
+                background-image: url(../images/gear.png);
+                /* 부드럽게 */
+                transition: .90s linear; /* ease | linear */
+            }
+
+            /* 이미지 회전 */
+            #menu:hover>.gear:nth-child(1) {
+                /* 시계 반대 방향으로 반바퀴 회전 */
+                transform: rotate(-180deg);
+            }
+
+            #menu:hover>.gear:nth-child(2) {
+                /* 시계 방향으로 반바퀴 회전 */
+                transform: rotate(150deg);
+            }
+
+        </style>
+    </head>
+    <body>
+      
+        <div id="menu">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <strong>SETTINGS</strong>
+        </div>
+
+    </body>
+</html>
