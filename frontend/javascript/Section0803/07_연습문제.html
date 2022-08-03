@@ -19,24 +19,46 @@
                     //  4 % 2
                     //  0 != 1
                     document.write("<hr>");
+            
+            //문2) 임의의 정수가 3의 배수인지 확인하시오
 
-            /* var i;
-            if (i % 2 ==0) {
-                document.write("짝수입니다.")
-            } else {
-                document.write("홀수입니다.")
-            } */
-            
-            //문2) 임의의 정수가 3의 배수인지 확인하시오 
-            
-            
+            let b = 7;
+            document.write(b % 3 == 0);
+                    //     7 % 3
+                    //        1  ==  0
+                    // false
+                    document.write("<hr>");
+
             //문3) 임의의 정수가 4의 배수인지 확인하시오
-            
-            //문4) 해당 년도가 윤년인지 확인하시오            
 
-            //문5) 임의의 정수가 2의 배수이면서 5의 배수인지 확인하시오                                              
+            let c = 4;
+            document.write(c % 4 == 0);
+            document.write("<hr>");
+            
+            //문4) 해당 년도가 윤년인지 확인하시오
+            // - 윤년 : 4년마다 한번씩 2월 29일이 속해있는 년도
+            // 대부분 언어에서 달력에 관한 명령어는 기본 제공된다.
+            
+            let year = 2022;
+            document.write(year % 4 == 0 && year % 100 != 0 || year % 400 == 0 );
+            document.write("<hr>");
+
+            //문5) 임의의 정수가 2의 배수이면서 5의 배수인지 확인하시오
+            
+            let d = 5;
+            document.write(d % 2 == 0 && d % 5 == 0);
+                    //     5 % 2         5 % 5
+                    //     1     == 0    0     == 0
+                    //     false         true
+                    //     false
+            document.write("<br>");
+            document.write(d % 10 == 0)
+            document.write("<hr>");
             
             //문6) 임의의 정수가 1 또는 3인지 확인하시오
+
+            let code = 1;
+            document.write(code == 1 || code == 3);
 
 
 
