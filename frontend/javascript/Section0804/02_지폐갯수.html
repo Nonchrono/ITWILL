@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>02_지폐갯수.html</title>
+        <style>
+            .blue {
+                width: 200px;
+                height: 500px;
+                text-align: center;
+            }
+            th {
+                background-color: lightgray;
+            }
+            td {
+                background-color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="demo">
+
+        </div>
+
+        <script>
+            // 연습) 각 지폐 갯수를 구해서 표작성해서 본문 id=demo에 출력하시오;
+            /*
+                만원 5장
+                천원 4장
+                백원 3장
+                십원 2장
+
+                힌트 : 
+            */
+
+            let money = 54320;
+            let man = parseInt(money / 10000);
+            let chun = parseInt((money / 1000) - (man * 10));
+            let bak = parseInt((money/100) - (man*100) - (chun*10));
+            let ship = parseInt((money/10) - (man*1000) - (chun*100)- (bak*10));
+
+
+            // 강사님 풀이
+            // let money2 = 54320;
+            
+            // let m = parseInt(money2/10000); // 5
+            // money2 = money % 10000;         // 4320
+            // let c = parseInt(money2/1000);  // 4
+            // money2 = money2 % 1000;          // 320
+            // let b = parseInt(money2/100);   // 3
+            // money2=money2%100;               // 20
+            // let s=parseInt(money2/10);      // 2
+
+
+
+
+            let result=""; // 결과값
+                result = result + "<table border = '1' class='blue'>"; // result+=""랑 같다
+                result = result + "<tr>";
+                result = result + "    <th>만원</th>";
+                result = result + "    <td>"+man+"</td>";
+                result = result + "</tr>";
+                result = result + "<tr>";
+                result = result + "    <th>천원</th>";
+                result = result + "    <td>"+chun+"</td>";
+                result = result + "</tr>";
+                result = result + "<tr>";
+                result = result + "    <th>백원</th>";
+                result = result + "    <td>"+bak+"</td>";
+                result = result + "</tr>";
+                result = result + "<tr>";
+                result = result + "    <th>십원</th>";
+                result = result + "    <td>"+ship+"</td>";
+                result = result + "</tr>";
+                result = result + "</table>";
+
+                document.getElementById("demo").innerHTML=result;
+            
+
+
+
+        </script>
+    </body>
+</html>

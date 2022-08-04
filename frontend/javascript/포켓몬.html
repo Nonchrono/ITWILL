@@ -38,13 +38,12 @@
                 position: absolute;
             }
 
-            .choose {
-                float: left;
-                border: 1px solid gray;
-            }
-
-            span {
+            article {
                 font-size: 30px;
+                width: 418px;
+                height: 70px;
+                box-sizing: border-box;
+                float: left;
             }
 
 
@@ -56,25 +55,22 @@
             <span>Pokemon</span>
             <div id="square">
                 <div id="menu">
+                    <section id="battle">
+                        <input type="button" value="싸우다">
+
+                    
+                        <input type="button" value="가방">
+                        
+                    </section> <!-- bag end -->
                     <section class="choose">
-                        <div id="battle">
+                        <span id="pokemon_change">
+                            <input type="button" value="교체">
                             
+                        </span> <!--pokemon_change end-->
+                        <span id="run">
+                            <input type="button" value="도망가다">
 
-                        </div> <!-- battle end -->
-                        <div id="bag">
-
-                            
-                        </div> <!-- bag end -->
-                    </section>
-                    <section class="choose">
-                        <div id="pokemon_change">
-
-                            
-                        </div> <!--pokemon_change end-->
-                        <div id="run">
-
-
-                        </div> <!-- run end -->
+                        </span> <!-- run end -->
                     </section>
                 </div> <!-- menu end -->
                 <div id="back">
