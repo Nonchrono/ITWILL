@@ -38,14 +38,21 @@
                 position: absolute;
             }
 
-            article {
-                font-size: 30px;
-                width: 418px;
-                height: 70px;
-                box-sizing: border-box;
+            .menu {
                 float: left;
+                width: 180px;
+                height: 50px;
+                margin: 12px;
+                text-align: center;
             }
 
+            .btn {
+                background-color: rgb(133, 131, 110);
+                border-radius: 12px;
+                color: white;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
 
         </style>
 
@@ -55,23 +62,18 @@
             <span>Pokemon</span>
             <div id="square">
                 <div id="menu">
-                    <section id="battle">
-                        <input type="button" value="싸우다">
-
-                    
-                        <input type="button" value="가방">
-                        
-                    </section> <!-- bag end -->
-                    <section class="choose">
-                        <span id="pokemon_change">
-                            <input type="button" value="교체">
-                            
-                        </span> <!--pokemon_change end-->
-                        <span id="run">
-                            <input type="button" value="도망가다">
-
-                        </span> <!-- run end -->
-                    </section>
+                    <span class="menu">
+                        <button class="btn">싸우다</button>
+                    </span>
+                    <span class="menu">
+                        <button class="btn">가방</button>
+                    </span>
+                    <span class="menu">
+                        <button class="btn">교체</button>
+                    </span>
+                    <span class="menu">
+                        <button class="btn">도망가다</button>
+                    </span>
                 </div> <!-- menu end -->
                 <div id="back">
                     <img src="../images/background.png">
@@ -79,6 +81,11 @@
                 </div> <!-- back end -->
                 <div id="pokemon_back">
                     <img src="../images/pikachu back.gif" alt="pokemon_back">
+
+
+                </div> <!-- pokemon_back end-->
+                <div id="pokemon_front">
+                    <img src="../images/pikachu front.gif" alt="pokemon_front">
 
 
                 </div> <!-- pokemon_back end-->
