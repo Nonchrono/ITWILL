@@ -190,13 +190,38 @@
                 csum = csum + 3 * i;
                 last = 3 * i;
                 i++;
-                if (csum > 100) {
+                if (csum >= 100) {
                 break;
                 }
 
             }
 
             document.write("어디까지 ? "+last);
+            document.write("<hr>");
+
+
+            // 강사님 풀이
+            let num = 0;
+            let add = 0;    //누적의 합
+            let str="";     //출력 결과
+
+            while(true) {
+                num = num + 3;              // 3의 배수
+                add = add + num;
+
+                /* document.write(num + "&nbsp;&nbsp;" + add);
+                document.write("<hr>"); */
+                str = str+num+"+";
+
+                if(add >= 100) {
+                    break;
+                }                
+            } // while end
+
+            document.write(str);
+            document.write("<hr>");
+            document.write("3의 배수의 누적의 합 : "+add);
+            document.write("<hr>");
 
 
         </script>
