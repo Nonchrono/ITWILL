@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>04_계산기.html</title>
+        <style>
+            .txt {
+                border: 2px solid #ccffff;
+                text-align: right;
+                font-weight: bold;
+                font-size: 20px;
+                color: black;
+                height: 30px;
+                background-color: rgb(218, 239, 245);
+            }
+        
+            .button {
+                border: none;
+                border-radius: 15px;
+                font-family: "paybooc-Light", sans-serif;
+                box-shadow: 0 15px 35px rgba(2, 2, 2, 0.2);
+                width: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: 0.25s;
+
+                background-color: aliceblue;
+                color: #1e6b7b;
+
+            }
+
+            tr {
+                text-align: center;
+            }
+
+            table {
+                background-color: #d8ec7f;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3>미니 계산기</h3>
+
+
+        <form>
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="result" id="result" size="20" value="0" readonly class="txt">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  7  " onclick="inputData(7)" class="button"></td>
+                    <td><input type="button" value="  8  " onclick="inputData(8)" class="button"></td>
+                    <td><input type="button" value="  9  " onclick="inputData(9)" class="button"></td>
+                    <td><input type="button" value="  /  " onclick="operator('/')" class="button"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  4  " onclick="inputData(4)" class="button"></td>
+                    <td><input type="button" value="  5  " onclick="inputData(5)" class="button"></td>
+                    <td><input type="button" value="  6  " onclick="inputData(6)" class="button"></td>
+                    <td><input type="button" value="  *  " onclick="operator('*')" class="button"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  1  " onclick="inputData(1)" class="button"></td>
+                    <td><input type="button" value="  2  " onclick="inputData(2)" class="button"></td>
+                    <td><input type="button" value="  3  " onclick="inputData(3)" class="button"></td>
+                    <td><input type="button" value="  -  " onclick="operator('-')" class="button"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  0  " onclick="inputData(0)" class="button"></td>
+                    <td><input type="button" value="  .  " class="button"></td>
+                    <td><input type="button" value="  =  " onclick="compute()" class="button"></td>
+                    <td><input type="button" value="  +  " onclick="operator('+')" class="button"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="  ←  " onclick="backspace()" class="button"></td>
+                    <td colspan="2"><input type="button" value="  C  " onclick="cls()" class="button"></td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+
+            // 1) c 버튼을 클릭하면 id=result에 0을 대입
+            function cls() {
+                document.getElementById("result").value = 0;
+            } // cls() end
+
+            // 2) 클릭한 숫자 버튼에 맞는 숫자를 출력하기
+            function inputData(su) {
+                // alert(su);
+                // 전달 받은 su변수값을 id=result에 대입
+                // document.getElementById("result").value += su;
+
+                // id = result 값을 숫자형으로 변환("0123" -> 123)
+                document.getElementById("result").value = Number(document.getElementById("result").value += su);
+            } // inputData() end
+
+            // 3) 연산에 필요한 전역변수 선언하기
+            let op;     // 연산기호
+            let num1;   // 사용자가 입력한 첫번째 수
+            let num2;   // 사용자가 입력한 두번째 수
+
+            
+            function operator(kind) {
+                // 4) 클릭한 연산기호를 전역변수 op에 저장하기
+                // alert(kind);
+                op = kind;
+
+                // 5) id=result가 가지고 있는 값을 num1 변수에 저장하기
+                num1 = Number(document.getElementById("result").value);
+
+                // 6) 두번째 수를 입력 받기 위해 id=result가 갖고 있는 값을 초기화하기
+                cls();
+
+
+            } // operator() end
+
+            // 참조 : https://www.w3schools.com/jsref/jsref_eval.asp
+            function compute() {
+                // 실제 계산을 해서 결과값 출력하기
+                // 계산에 필요한 두번째 수를 num2에 저장하기
+                num2 = Number(document.getElementById("result").value);
+
+                // 8) 계산해서 결과 출력하기
+                document.getElementById("result").value = eval(num1 + op + num2);
+            } // compute() end
+
+
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>40 마우스 이벤트</title>
+    <meta charset="utf-8" />
+    
+  </head>
+  <body>
+    <h1>마우스 이벤트</h1>
+    <hr />
+    <table border="1">
+      <tr>
+        <th onmouseover="show('r')">라이언</th>
+        <th onmouseover="show('n')">네오</th>
+        <th onmouseover="show('j')">제이지</th>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div id="ryan">
+            <img src="../../images/k7.png" style="display: block" />
+          </div>
+          <div id="neo">
+            <img src="../../images/k5.png" style="display: none" />
+          </div>
+          <div id="jayG">
+            <img src="../../images/k3.png" style="display: none" />
+          </div>
+        </td>
+      </tr>
+    </table>
+    <script>
+      function show(kind) {
+        // alert(kind);
+        switch (kind) {
+          case "r":
+            document.getElementById("ryan").style.display = "block";
+            document.getElementById("neo").style.display = "none";
+            document.getElementById("jayG").style.display = "none";
+            break;
+          case "n":
+            document.getElementById("ryan").style.display = "none";
+            document.getElementById("neo").style.display = "block";
+            document.getElementById("jayG").style.display = "none";
+            break;
+          case "j":
+            document.getElementById("ryan").style.display = "none";
+            document.getElementById("neo").style.display = "none";
+            document.getElementById("jayG").style.display = "block";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

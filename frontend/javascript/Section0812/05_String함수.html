@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>05_String함수.html</title>
+    </head>
+    <body>
+
+        <h3>String Methods</h3>
+
+        <script>
+            // 참조 : https://www.w3schools.com/js/js_string_methods.asp
+
+            let str="Gone With The Wind";
+
+            document.write(str.length); // 글자 갯수
+            document.write("<hr>");
+            document.write(str.charAt(0));  // "0"
+            document.write("<hr>");
+            document.write(str.charAt(17));  // "d" 문자열을 갖고 있다는 것까지 알아두자
+            document.write("<hr>");
+            document.write(str.charAt(str.length-1)); // "d" 마지막 글자
+            document.write("<hr>");
+
+            document.write(str.toUpperCase()); // 전부 대문자로 치환
+            document.write("<hr>");
+            document.write(str.toLowerCase()); // 전부 소문자로 치환
+            document.write("<hr>");
+            document.write(str.replace("n", "N"));
+            document.write("<hr>");
+
+            // ★★★
+            document.write(str.substring(6, 12)); // 6번째 글자서부터 (12-1)번째 글자까지 자르기
+            document.write("<hr>");
+            document.write(str.substring(10, 13)); // 10번째 글자서부터 (13-1)번째 글자까지 자르기
+            document.write("<hr>");
+
+            // 맨처음 글자 자르기
+            document.write(str.substring(0,1));
+            document.write("<hr>");
+
+            // 맨마지막 글자 자르기
+            document.write(str.substring(str.length-1,str.length));
+            document.write("<hr>");
+
+        </script>
+
+    </body>
+</html>
