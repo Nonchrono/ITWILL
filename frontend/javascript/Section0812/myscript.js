@@ -12,8 +12,8 @@ function hap(a, b) { // 두수 사이의 합을 반환하시오
         b = tmp;
     }
 
-    for (let i = a; i <= b; i++) {
-        sum = sum + i;
+    for (let n = a; n <= b; n++) {
+        sum = sum + n;
     }
     return sum;
 } // hap() end
@@ -29,9 +29,9 @@ function diff(a, b) { // 두 수 사이의 차이를 반환하시오
 
 function leap(year) {
     if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-        return "윤년";
+        return true;
     } else {
-        return "평년";
+        return false;
     } // if end
 } // leap() end
 
