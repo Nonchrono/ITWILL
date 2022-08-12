@@ -43,6 +43,33 @@
             document.write(str.substring(str.length-1,str.length));
             document.write("<hr>");
 
+            // 문자열 분리하기. substring이랑 비슷
+            document.write(str.slice(10,13));
+            document.write("<hr>");
+
+            // 문자열 합치기
+            let text1="Hello";
+            let text2="World";
+            let text3=text1.concat(text2);
+            document.write(text3);
+            document.write("<hr>");
+
+            // 공백 제거하기 (양쪽 사이드만)
+            let text4="     Java    Script     ";
+            document.write("#"+text4.trim()+"#"); // "#Java Script#"
+            document.write("<hr>");
+
+
+            // 자리수를 4칸으로 잡고 빈 자리수는 0으로 앞에서부터 채우기
+            let text5 = "9"
+            document.write(text5.padStart(4,0)); // 0009
+            document.write("<hr>");
+
+            // 자리수를 4칸으로 잡고 빈 자리수는 0으로 뒤에서부터 채우기
+            let text6 = "8"
+            document.write(text6.padEnd(4,0)); // 8000
+            document.write("<hr>");
+
         </script>
 
     </body>

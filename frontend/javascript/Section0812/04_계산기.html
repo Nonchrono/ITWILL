@@ -29,12 +29,23 @@
 
             }
 
+            .button:hover {
+                background-color: lightgray;
+            }
+            
+            .button:active {
+            background-color: #353835;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            }
+
             tr {
                 text-align: center;
             }
 
             table {
                 background-color: #d8ec7f;
+                box-shadow: rgb(87, 87, 87) 2px 2px 2px;
             }
 
         </style>
@@ -129,6 +140,17 @@
             } // compute() end
 
 
+            // 9) 백스페이스 버튼을 클릭하면 id=result 값에서 마지막 글자부터  순서대로 지우기
+
+            function backspace() {
+                let val = document.getElementById("result").value
+
+                if (val.length-2 > 1) {
+                    document.getElementById("result").value = val.substring(0, val.length-1); 
+                } else {
+                    document.getElementById("result").value = 0;
+                }
+            }
 
         </script>
 
