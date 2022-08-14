@@ -145,7 +145,7 @@
             function backspace() {
                 let val = document.getElementById("result").value
 
-                if (val.length-2 > 1) {
+                if (val.length > 1) {
                     document.getElementById("result").value = val.substring(0, val.length-1); 
                 } else {
                     document.getElementById("result").value = 0;
