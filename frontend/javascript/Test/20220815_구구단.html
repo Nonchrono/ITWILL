@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>구구단.html</title>
+    </head>
+    <body>
+        <script>
+            // 재귀함수를 통해 4단 출력하기
+
+            let n = 4;
+            let i = 1;
+
+            /* function gop() {
+                if (i > 9) {
+                    return;
+                } else {
+                    document.write("4 * "+i+" = "+n*i);
+                    document.write("<br>");
+                    return n * gop(i=i+1);
+                }
+                
+            } */
+
+            function gop() {
+                if (i > 9) {
+                    return;
+                } else {
+                    document.write("4 * "+i+" = "+n*i);
+                    document.write("<br>");
+                    return n * gop(i++);
+                }
+                
+            }
+
+            gop();
+
+        </script>
+
+    </body>
+</html>

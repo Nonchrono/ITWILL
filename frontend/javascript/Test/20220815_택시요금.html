@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>택시요금.html</title>
+    </head>
+    <body>
+        <script>
+            let base = 900;
+            let money = 0;
+            let distance = 2900;
+
+        if (distance > 2000) {
+            distance = distance - 2000;
+            money = 900 + (Math.ceil(distance/200))*100;
+        } else {
+            money = 900;
+        }
+
+        document.write(money);
+
+        </script>
+
+    </body>
+</html>
