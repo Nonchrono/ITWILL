@@ -8,9 +8,14 @@
                 position: relative;
                 left: 100px;
                 top: 10px;
-                width: 800px;
+                /* 8) */
+                --width: 800px;
+                width: 285px; /* 9) 가로 영역 크기 줄이기 */
                 height: 100px;
-                background-color: hotpink;
+                /* 10) */
+                --background-color: hotpink;
+                background-color: white; /* 11) 배경색 흰색으로 바꾸기 */
+                overflow: hidden;
             }
         </style>
         <script>
@@ -38,13 +43,13 @@
                 // 문) 반복문을 활요해서 이미지 8장 배치하기
 
                 for (let i = 0; i < ctnt.length; i++) {
-                    document.write("<div id='area" + i + "' style='position: absolute; top: 0; left: " + i*90 + "px;'>");
+                    document.write("<div id='area" + i + "' style='position: absolute; top: 5px; left: " + i*90 + "px;'>");
                     document.write(ctnt[i]);
                     document.write("</div>");
                 } // for end
 
                 // 3) 3초 후에 scroll 함수 1번 호출 
-                setTimeout(scroll, 3000);
+                setTimeout(scroll, 2000);
 
             } // start() end
 
@@ -59,14 +64,34 @@
                 for (let i =0; i < ctnt.length; i++) {
                     let tmp = document.getElementById('area'+i).style;
                     tmp.left = parseInt(tmp.left) - 10 + "px";
-                }
+
+
+                    // 7) 이미지 순환하기 위해서 이미지를 다시 배치
+
+                    /* if (parseInt(tmp.left) < -90) {
+                        tmp.left = parseInt(tmp.left) + 720+"px";
+                    } */
+
+                    if (parseInt(tmp.left) <= -90) {
+                        tmp.left = (ctnt.length-1)*90 + "px";
+                    } // if end
+                } // for end
                 
 
-
+                //  6) 0.5초 후에 scroll() 함수를 호출
+                timer = setTimeout(scroll, 300);
             } // scroll() end
+
+            // 13) 6)의 시간을 해제
+            var timer;
+
+            function killtime() {
+                clearTimeout(timer);
+            } // killtime() end
         </script>
     </head>
-    <body>
+    <body onunload="killtime()">
+        <!-- 현재 문서를 떠났을 때 -->
 
         <h3>이미지스크롤</h3>
 
