@@ -141,14 +141,37 @@
 
 
             // 9) 백스페이스 버튼을 클릭하면 id=result 값에서 마지막 글자부터  순서대로 지우기
+            // id = result 값에서 마지막 글자만 제외시키고 다시 대입
+            // 단, 자릿수가 한개인 값에서는 0으로 대입
 
-            function backspace() {
+            /* function backspace() {
                 let val = document.getElementById("result").value
 
                 if (val.length > 1) {
                     document.getElementById("result").value = val.substring(0, val.length-1); 
                 } else {
                     document.getElementById("result").value = 0;
+                }
+            } */
+
+            function backspace() {
+
+                // a) id =result 값을 가져와서 글자 갯수 출력하기
+                let result = document.getElementById("result").value;
+                /* alert(result);
+                alert(result.length); */
+
+                // b) 처음 글자부터 마지막 글자를 제외시키고 문자열 가져오기(substring())
+                let len = result.length;
+                // alert(result.substring(0, len-1));
+
+                // c) 분리된 b) 문자열을 다시 id=result에 대입하기
+                // 단, 글자 갯수가 1개이면 0으로 다시 대입
+
+                if(len == 1) {
+                    document.getElementById("result").value = 0;
+                } else {
+                    document.getElementById("result").value = result.substring(0, len -1);
                 }
             }
 
