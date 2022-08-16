@@ -104,3 +104,20 @@ function validate() {
     return true; // <form name=memfrm> 폼을 서버로 전송
 
 } // validate() end
+
+function validate2() {
+    // <form id=memfrm></form>
+    let frm = document.getElementById("memfrm");
+    // alert(frm); // [object HTMLFormElement]
+
+    // <form action=ok2.jsp></form>와 동일한 기능의 자바스크립트 속성
+    frm.action="ok2.jsp";
+
+    // <input type = submit> 과 동일한 기능의 자바스크립트 함수
+    frm.submit();
+
+
+    // <input type=reset>와 동일한 기능의 자바스크립트 함수
+    // 폼 양식 내에 있는 폼컨트롤 요소가 가지고 있던 최초의 상태로 복귀
+    // frm.reset();
+} // validate2() end
