@@ -73,12 +73,14 @@
                 document.getElementById("clock").innerText=today;
 
                 timer = setTimeout(showtime, 1000); // 1초 후에 showtime 함수 호출
+                // let timer;가 생략되어 있기 때문에 timer에 들어간 값이 실행이 된다.
             } // showtime();
             
             let timer;  // 전역변수
 
             function killtime() {
                 clearTimeout(timer);
+                // timer를 잡아야하는 건 변수는 범위이기 때문. 값을 직접 넣으면 안 된다.
             } // killtime() end
 
             // 전역변수에 안 넣고 바로 함수에 넣으니 작동 안 함
