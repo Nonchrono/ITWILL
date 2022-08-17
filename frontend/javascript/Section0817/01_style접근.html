@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>01_style접근.html</title>
+    </head>
+    <body>
+
+        <h3>자바스크립트에서 스타일 접근</h3>
+
+        <div id="mydiv" style="position: relative;
+                               top: 10px;
+                               left: 20px;
+                               width: 150px;
+                               height: 70px;
+                               background-color: red;">
+        대한민국
+        </div>
+        <hr>
+        <input type="button" value="mydiv의 style속성" onclick="test1()">
+        <hr>
+        <input type="button" value="mydiv의 style변경" onclick="test2()">
+
+        <hr>
+        <img src="../../images/001.png" id="myimg">
+        <hr>
+        <input type="button" value="이미지변경" onclick="test3()">
+
+
+        <p>input</p>s
+
+        <script>
+            function test1() {
+                let a = document.getElementById("mydiv");
+                // alert(document.getElementById("mydiv")); // [object HTMLDivElement]
+                
+                // // 순수 자바스크립트 스타일 접근
+                // alert(a.style); // [object CSSStyleDeclaration]
+
+                // // jQuery (자바스크립트를 쓰기 편하게 압축시켜놓은 것. 자바스크립트 라이브러리. 추천)
+                // $("#mydiv").css()
+
+                alert(a.style.top);
+                alert(a.style.left);
+                alert(a.style.width);
+                alert(a.style.height);
+                alert(a.style.backgroundColor);
+                alert(a.style.position);
+            }
+
+            function test2() {
+                let a = document.getElementById("mydiv");
+
+                a.style.top="100px";
+                a.style.left="150px";
+                a.style.width="400px";
+                a.style.height="300px";
+                a.style.backgroundColor="green";
+                a.style.position="absolute";
+            }
+
+            function test3() {
+                let a = document.getElementById("myimg");
+
+                a.src = "../../images/002.png"
+            }
+
+        </script>
+
+    </body>
+</html>
