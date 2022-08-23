@@ -37,9 +37,11 @@ where kor >= (select round(avg(kor), 0) from sungjuk where addr = 'Seoul');
 select addr, uname, kor
 from sungjuk
 where kor >= (select round(avg(kor), 0) from sungjuk where addr = 'Seoul') and addr != 'Seoul';
+-- addr != 'Seoul' 동일
 
 -- 문4)국어점수의 최소값보다 이하 점수가 수학 또는 영어점수에 있는지 조회하시오
-select min(kor) from sungjuk;
+-- 국어 점수의 최솟값
+select min(kor) from sungjuk; -- 20
 
 select uname, eng, mat
 from sungjuk
