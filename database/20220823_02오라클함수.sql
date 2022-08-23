@@ -85,7 +85,15 @@ select to_date('2022-10-25') - to_date('2022-10-30') from dual;       -- 5
 
 select max(kor), count(*)
 from sungjuk
-where addr = 'Incheon';     -- 최대값 (null), 인원 수 (0)
+where addr = 'Incheon';
+
+select max(kor), count(*)
+from sungjuk
+where addr = 'Incheon' and kor = (select max(kor) from sungjuk);     -- 최대값 (null), 인원 수 (0)
+
+select max(kor), count(*)
+from sungjuk
+where addr = 'Seoul' and kor = (select max(kor) from sungjuk);
 
 select count(*) + 1             
 from sungjuk
