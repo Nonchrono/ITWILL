@@ -179,8 +179,13 @@ where gcode like 'd%' and ghakjum = 3;
 
 문7)과목테이블에서 프로그램 교과목의 학점 평균보다 낮은 프로그램 교과목을 조회하시오
 
+-- 프로그램 교과목의 학점 평균 구하기
 select avg(ghakjum)
 from tb_gwamok
+where 2.6 > ghakjum;
+
+select avg(ghakjum)
+from tb_gwamoks
 where gcode like 'p%';
 
 select ghakjum, gname
