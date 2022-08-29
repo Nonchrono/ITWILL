@@ -85,4 +85,20 @@ where su.hakno is null;
 -- 문8) daum이메일을 쓰는 학생은 누구고 학점은 몇점인가요?
 
 
+select uname, email, sum(ghakjum) || '점'  as 학점
+from tb_student st join tb_sugang su
+on st.hakno = su.hakno join tb_gwamok gw
+on su.gcode = gw.gcode
+where email like '%daum%'
+group by uname, email;
+
+
 -- 문9) 복수전공을 하고있는 학생들은 누구인가요? 
+
+
+select gname, uname  
+from tb_student st join tb_sugang su
+on st.hakno = su.hakno join tb_gwamok gw
+on su.gcode = gw.gcode
+group by uname, gname
+having count (uname) >= 2;
