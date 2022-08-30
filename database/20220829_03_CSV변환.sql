@@ -45,20 +45,82 @@ where zipaddress like ('서울특별시 강남구%');
 
 -- 문2) 한국교원대학교_초등학교 위치.csv를 반환하시오
 
+-- 비어있는 값(null)을 찾으시오
+
 
 create table school (
-    schid            varchar(1000)    -- 학교ID
-    ,schaddress   varchar(1000)    -- 학교명
-    ,schlevel        varchar(1000)    -- 학교급구분
-    ,schwhere      varchar(1000)     -- 소재지도로명
-    ,schcreate      varchar(1000)     -- 생성일자
-    ,schchange     varchar(1000)     -- 변경일자
-    ,lat                 varchar(1000)    -- 위도
-    ,har                varchar(1000)     -- 경도
+        schoolid            varchar(10)       -- 학교ID
+    ,   schoolname       varchar(255)      -- 학교명
+    ,   schoolgubun      varchar(20)        -- 학교급구분
+    ,   schooladdr         varchar(255)      -- 소재지도로s명
+    ,   cdate                date                  -- 생성일자 (형식 YYYY-MM-DD)
+    ,   udate                date                  -- 변경일자 (형식 YYYY-MM-DD)
+    ,   latitude              number(20,9)     -- 위도
+    ,   longitude            number(20,9)     -- 경도
 );
 
 select count(*) from school;
 drop table school;
 
 
-select * from school where schwhere is null;
+select * from school
+where schoolid is null
+or schoolname is null
+or schoolgubun is null
+or schooladdr is null
+or cdate is null
+or udate is null
+or latitude is null
+or longitude is null;
+
+-- 과제) 각 시도별 초등학교, 중학교 갯수를 구하시오
+
+-- 초등학교, 중학교 선별
+select *
+from school
+where schoolgubun = '초등학교' or schoolgubun = '중학교';
+
+-- 글자 자르기
+select substr(schooladdr, 0, 2)
+from school;
+
+-- 그룹화
+select substr(schooladdr, 0, 2) as 지역, schoolgubun, count(substr(schooladdr, 0, 2)) cnt
+from school
+where schoolgubun = '초등학교' or schoolgubun = '중학교' and schooladdr is not null
+group by substr(schooladdr, 0, 2), schoolgubun;
+
+-- 한이누나 답변 (문자열 공백 찾아서 해보기)
+select substr(schooladdr, 0, instr(schooladdr, ' ', 1)) , schoolgubun, count(*)
+from school
+group by substr(schooladdr, 0, instr(schooladdr, ' ', 1)), schoolgubun
+having schoolgubun <>'고등학교'
+order by substr(schooladdr, 0, instr(schooladdr, ' ', 1)), schoolgubun desc;
+
+-- 경환형 답변
+select
+     nvl(cho.addr1, '-')
+    ,nvl(cho.ckinds, '초등학교') as 학교구분
+    ,nvl(cho.c_cnt, 0) as 갯수
+    ,nvl(jung.addr2, '-')
+    ,nvl(jung.jkinds, '중학교') as 학교구분
+    ,nvl(jung.j_cnt, 0) as 갯수
+from(
+    select addr1, ckinds, count(*) as c_cnt
+    from (
+        select substr(schooladdr, 0, instr(schooladdr, ' ')) as addr1, schoolgubun as ckinds
+        from school
+        )
+    group by addr1, ckinds
+    having ckinds like '초%'
+    ) cho full join (
+                select addr2, jkinds, count(*) as j_cnt
+                from (
+                    select substr(schooladdr, 0, instr(schooladdr, ' ')) as addr2, schoolgubun as jkinds
+                    from school
+                    )
+                group by addr2, jkinds
+                having jkinds like '중%'
+                ) jung
+on cho.addr1 = jung.addr2
+order by cho.addr1;
