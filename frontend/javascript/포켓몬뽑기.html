@@ -3,32 +3,101 @@
     <head>
         <meta charset="UTF-8">
         <title>포켓몬뽑기.html</title>
+
+        <style>
+            #square {
+                border: 7px double black;   
+                background-color: beige;            
+                width: 450px;
+                height: 450px;
+                margin: auto;
+                position: relative;
+            }
+
+            #menu {
+                border: 5px double black;               
+                width: 425px;
+                height: 150px;
+                left: 12px;
+                bottom: 13px;
+                background-color: beige;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            #back {
+                left: 10px;
+                top: 11px;
+                width: 429px;
+                height: 264px;
+                border: 2px solid black;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            .menu1 {
+                position: absolute;
+                width: 180px;
+                height: 50px;
+                left: 50px;
+                text-align: center;
+            }
+
+            .btn {
+                /* background-color: rgb(162, 161, 155); */
+                border: 2px solid #050505;
+                border-radius: 20px;
+                width: 200px;
+                height: 60px;
+                color: rgb(25, 25, 25);
+                cursor: pointer;
+            }
+
+            .pokemon {
+                position: absolute;
+            }
+
+
+        </style>
     </head>
     <body>
 
-        <button onclick="rdpoke()">
-            랜덤 뽑기
-        </button>
+        <div id="square">
+            <div id="menu">
+                
+            </div> <!-- menu end -->
 
-            <div id="charmander" style="display: none;">
-                <img src="../sprite/charmander.gif" alt="파이리">
-            </div>
+            <div id="back">
+                <button onclick="rdpoke()" class="menu1">
+                    랜덤 뽑기
+                </button>
 
-            <div id="squirtle" style="display: none;">
-                <img src="../sprite/squirtle.gif" alt="꼬부기">
-            </div>
+                <div id="charmander" style="display: none;" class="pokemon">
+                    <img src="../sprite/charmander.gif" alt="파이리">
+                </div>
+    
+                <div id="squirtle" style="display: none;" class="pokemon">
+                    <img src="../sprite/squirtle.gif" alt="꼬부기">
+                </div>
+    
+                <div id="bulbasaur" style="display: none;" class="pokemon">
+                    <img src="../sprite/bulbasaur.gif" alt="이상해씨">
+                </div>
+    
+                <div id="pikachu" style="display: none;" class="pokemon">
+                    <img src="../sprite/pikachu.gif" alt="피카츄">
+                </div>
+    
+                <div id="hitmonchan" style="display: none;" class="pokemon">
+                    <img src="../sprite/hitmonchan.gif" alt="홍수몬">
+                </div>
 
-            <div id="bulbasaur" style="display: none;">
-                <img src="../sprite/bulbasaur.gif" alt="이상해씨">
-            </div>
 
-            <div id="pikachu" style="display: none;">
-                <img src="../sprite/pikachu.gif" alt="피카츄">
-            </div>
+                <img src="../sprite/oak001.png" width="425px" height="260px" alt='배경'>
 
-            <div id="hitmonchan" style="display: none;">
-                <img src="../sprite/hitmonchan.gif" alt="홍수몬">
-            </div>
+            </div> <!-- back end -->
+        </div> <!-- square end -->
+
 
         <script>
             let pokenum = 0;
