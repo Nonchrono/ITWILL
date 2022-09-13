@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* 문자 인코딩 UTF-8 */
+/* 반드시 첫줄에 와야한다 */
+
+* {
+    font-family: 궁서체;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+} /* *는 모든 요소들에 적용한다는 뜻 */
+
+body {
+    background-color: yellow;
+    /* 방향 설정 안 하고 0으로 썼다는 것은 모든 방향 0으로 설정한다는 뜻 */
+    margin: 0; /*바깥쪽 여백*/
+    padding: 0; /*안쪽 여백*/
+}
+
+table {
+    background-color: white;
+    border: 1px;
+    margin: 0; /*바깥쪽 여백*/
+    padding: 0; /*안쪽 여백*/
+}
+
+.line {border: 1px dotted gray;}
+
+#mylayer{
+    width:200px;
+    height: 200px;
+    background-color: aqua;
+}

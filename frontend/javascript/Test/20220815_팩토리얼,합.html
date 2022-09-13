@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>팩토리얼,합.html</title>
+    </head>
+    <body>
+        <script>
+           function fact(n) {
+                if (n == 1) {
+                    return 1;
+                } else {
+                    return n * fact(n-1);
+                }
+            }
+
+            let result = fact(4);
+            document.write(result);
+            document.write('<br>');
+
+///////////////////////////////////////////////////////////////////////////
+
+            let start = 2;
+            let end = 5;
+
+            function cal() {
+                if (start == end) {
+                    return start;
+                } else {
+                    return start + cal(start++);
+                }
+            }
+
+            let sum = cal();
+            document.write(sum);
+
+
+        </script>
+
+    </body>
+</html>

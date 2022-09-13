@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>pokemon_main.html</title>
+        <link rel="stylesheet" href="pokemon_main.css">
+    </head>
+    <body>
+
+        <!-- 스타팅 포켓몬 고르기 -->
+        <div id="square_1">
+            <div id="menu_1">
+                
+                <div onclick="rdpoke(); this.onclick=null;" id="rdpoke" class="rdpoke">
+                    <img src="sprite/pokeball.png" alt="몬스터볼">
+                </div>
+
+                <div id="charmander" style="display: none;" class="rdresult">
+                    <img src="sprite/charmander.gif" alt="파이리" class="firstPokemon">
+                </div>
+    
+                <div id="squirtle" style="display: none;" class="rdresult">
+                    <img src="sprite/squirtle.gif" alt="꼬부기" class="firstPokemon">
+                </div>
+    
+                <div id="bulbasaur" style="display: none;" class="rdresult">
+                    <img src="sprite/bulbasaur.gif" alt="이상해씨" class="firstPokemon">
+                </div>
+    
+                <div id="pikachu" style="display: none;" class="rdresult">
+                    <img src="sprite/pikachu.gif" alt="피카츄" class="firstPokemon">
+                </div>
+    
+                <div id="hitmonchan" style="display: none;" class="rdresult">
+                    <img src="sprite/hitmonchan.gif" alt="홍수몬" class="firstPokemon">
+                </div>
+            </div> <!-- menu_1 end -->
+
+            <!-- 스타팅 포켓몬 고를 때의 화면 -->
+            <div id="back_1">
+                <img src="sprite/oak001.png" width="425px" height="260px"d alt='배경'>
+                <span class="dialogue">"몬스터볼을 눌러보렴!!"</span>
+            </div> <!-- back_1 end -->
+        </div> <!-- square_1 end -->
+
+
+        <!-- 배틀 메뉴 -->
+        <div id="square_2">
+            <div id="menu_2">
+                <span class="menu_2_1">
+                    <button class="btn">싸우다</button>
+                </span>
+                <span class="menu_2_2">
+                    <button class="btn" onclick="bag()">가방</button>
+                </span>
+                <span class="menu_2_3">
+                    <button class="btn">교체</button>
+                </span>
+                <span class="menu_2_4">
+                    <button class="btn">도망가다</button>
+                </span>
+            </div> <!-- menu_2 end -->
+
+            <!-- 배틀 배경 -->
+            <div id="back_2">
+                <img src="sprite/background001.png" width="425px" height="260px" alt='배경'>
+
+            </div> <!-- back_2 end -->
+
+            <!-- 내 포켓몬 표시 -->
+            <div id="pokemon_back" onload="selectedPoke()">
+
+            </div> <!-- pokemon_back end-->
+
+            <!-- 적 포켓몬 표시 -->
+            <div id="pokemon_front">
+                <img src="sprite/pikachu.gif" alt="pokemon_front">
+
+
+            </div> <!-- pokemon_back end-->
+
+            <!-- 가방 리스트 -->
+            <div id="baglist">
+                <img src="sprite/crossmark.png" width="20px" height="20px" onclick="bagToBattle()" id="crossmark" alt="가위표">
+            </div>
+        </div> <!-- square_2 end -->
+
+        <div id="square_side"></div> <!-- square_side end -->
+
+        
+
+        <script>
+            let pokenum = 0; // 포켓몬 넘버
+            let firstHP = 100;    // 첫번째 포켓몬 hp
+            let secondHP = 100;   // 두번째 포켓몬 hp
+            let thirdHP = 100;    // 세번째 포켓몬 hp
+            let enemyHP = 100;  // 적팀 hp
+
+            
+
+            let rdpokemon = parseInt(Math.random()*100+1); // 랜덤으로 포켓몬 뽑기
+
+            // 랜덤으로 뽑은 포켓몬 넘버 설정
+            if (rdpokemon >= 1 && rdpokemon <= 30) {
+                    pokenum = 1; // 파이리
+                } else if (rdpokemon >= 31 && rdpokemon <= 60) {
+                    pokenum = 2; // 꼬부기
+                } else if (rdpokemon >= 61 && rdpokemon <= 90) {
+                    pokenum = 3; // 이상해씨
+                } else if (rdpokemon >= 91 && rdpokemon <= 96) {
+                    pokenum = 4; // 피카츄
+                } else {
+                    pokenum = 5; // 홍수몬
+                }
+
+            // 포켓몬 확률
+            function rdpoke() {
+                
+                switch(pokenum) {
+                    case 1:
+                        document.getElementById("charmander").style.display="block";
+                        document.getElementById("squirtle").style.display="none";
+                        document.getElementById("bulbasaur").style.display="none";
+                        document.getElementById("pikachu").style.display="none";
+                        document.getElementById("hitmonchan").style.display="none";
+                        alert("파이리");
+                        break;
+                    case 2:
+                        document.getElementById("charmander").style.display="none";
+                        document.getElementById("squirtle").style.display="block";
+                        document.getElementById("bulbasaur").style.display="none";
+                        document.getElementById("pikachu").style.display="none";
+                        document.getElementById("hitmonchan").style.display="none";
+                        alert("꼬부기");
+                        break;
+                    case 3:
+                        document.getElementById("charmander").style.display="none";
+                        document.getElementById("squirtle").style.display="none";
+                        document.getElementById("bulbasaur").style.display="block";
+                        document.getElementById("pikachu").style.display="none";
+                        document.getElementById("hitmonchan").style.display="none";
+                        alert("이상해씨");
+                        break;
+                    case 4:
+                        document.getElementById("charmander").style.display="none";
+                        document.getElementById("squirtle").style.display="none";
+                        document.getElementById("bulbasaur").style.display="none";
+                        document.getElementById("pikachu").style.display="block";
+                        document.getElementById("hitmonchan").style.display="none";
+                        alert("피카츄");
+                        break;
+                    case 5:
+                        document.getElementById("charmander").style.display="none";
+                        document.getElementById("squirtle").style.display="none";
+                        document.getElementById("bulbasaur").style.display="none";
+                        document.getElementById("pikachu").style.display="none";
+                        document.getElementById("hitmonchan").style.display="block";
+                        alert("홍수몬");
+                        break;
+                }
+
+                setTimeout(function() {
+                    battlePhase();
+                }, 700);
+            };
+
+            // 배틀 화면으로 전환
+            function battlePhase() {
+                document.getElementById("square_1").style.display='none';
+                document.getElementById("square_2").style.display='block';
+
+                selectedPoke();
+            };
+
+            // 고른 스타팅 포켓몬 표시
+            function selectedPoke() {
+                const pokeimg = document.getElementById('pokemon_back');
+
+                switch(pokenum) {
+                    case 1:
+                        pokeimg.innerHTML="<img src='sprite/charmander_b.gif'>";
+                        pokenum = "파이리";
+                        break;
+                    case 2:
+                        pokeimg.innerHTML="<img src='sprite/squirtle_b.gif'>";
+                        pokenum = "꼬부기";
+                        break;
+                    case 3:
+                        pokeimg.innerHTML="<img src='sprite/bulbasaur_b.gif'>";
+                        pokenum = "이상해씨";
+                        break;
+                    case 4:
+                        pokeimg.innerHTML="<img src='sprite/pikachu_b.gif'>";
+                        pokenum = "피카츄";
+                        break;
+                    case 5:
+                        pokeimg.innerHTML="<img src='sprite/hitmonchan_b.gif'>";
+                        pokenum = "홍수몬";
+                        break;
+                }
+            }
+
+            // 가방
+            function bag() {
+                document.getElementById('menu_2').style.display='none';
+                document.getElementById('back_2').style.display='none';
+                document.getElementById('pokemon_back').style.display='none';
+                document.getElementById('pokemon_front').style.display='none';
+                document.getElementById("baglist").style.display='block';
+            }
+
+            // 가위표 누르고 다시 배틀로
+            function bagToBattle() {
+                document.getElementById('menu_2').style.display='block';
+                document.getElementById('back_2').style.display='block';
+                document.getElementById('pokemon_back').style.display='block';
+                document.getElementById('pokemon_front').style.display='block';
+                document.getElementById("baglist").style.display='none';
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>주민등록번호.html</title>
+    </head>
+    <body>
+        <script>
+            let inputNum = prompt('\'-\'주민등록번호를 입력하세요', '13자리입니다');
+            alert(inputNum);
+
+            let birth = inputNum.substring(0,6);
+            let gender = Number(inputNum.substring(6,7));
+
+            switch(gender) {
+                case 1 : gender = "90년대생 남자"; break;
+
+                case 2 : gender = "90년대생 여자"; break;
+
+                case 3 : gender = "00년대생 남자"; break;
+
+                case 4 : gender = "00년대생 여자"; break;
+            }
+
+            document.write("생년월일 : "+birth);
+            document.write("<hr>")
+            document.write(gender);
+
+        </script>
+
+    </body>
+</html>

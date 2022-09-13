@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>06_test.html</title>
+    </head>
+    <body>
+        <script>
+            let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+
+            /* 
+                slice : 
+                변수명.slice(시작점, 종료점);
+                시작점에 들어가는 수가 +면 왼쪽서부터 자리를 세고
+                시작점에 들어가는 수가 -면 오른쪽서부터 자리를 센다
+                
+                시작점서부터 종료점 앞까지 남기고 나머지값을 지운다.
+           
+            */
+
+            /* 
+                splice :
+                변수명.splice(시작점, 자를 요소 수, 추가할 값1, 추가할 값2...);
+                시작점 지정은 slice와 같다.
+            
+                시작점서부터 자를 요소 수만큼 자르고 추가할 값 n을 더한다.      
+
+            */
+            
+            // ex)
+            /* nums.slice(5, 10);
+            
+            document.write(nums.slice(5))   //이후 //5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+            document.write(nums.slice(5,3)) //은 안됌
+            document.write(nums.slice(-5))  //뒤에서부터  //15,16,17,18,19
+            document.write(nums.slice(5, 10))   //5~10까지 //5,6,7,8,9
+
+            document.write(nums.splice(5,3))    //5부터 3자리 // 5,6,7
+            document.write(nums.splice(10, 2, -10, -11)) */
+
+            nums.splice(10, 2, -10, -11);   // 10번째 요소서부터 2개의 요소, 10, 11을 자르고 -10, -11을 추가한다.
+
+            document.write(nums);
+
+
+            // 주민번호 특정 자리값 가져오기
+            
+            let d = "9702281234567";
+            let c = d.slice(6, 7);  // 6번째 요소서부터 7번째 요소 전까지. 결국 6번째 요소 1개만 남긴다
+            document.write(c);  // 결과값 : 1
+
+        </script>
+    </body>ㄴ
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>01_요일구하기.html</title>
+    </head>
+    <body>
+
+        <h3>요일 구하는 프로그램</h3>
+
+        <script>
+            let cYear = 1997, cMonth=2, cDate=28;
+            /* 
+                서기 1년 1월 1일 ~ 서기 2022년 8월 10일 => 총 며칠인지 구하기
+                총 날 수 % 7 => 0(일) 1(월) 2(화) 3(수) 4(목) 5(금) 6(토)
+
+
+                1단계) 서기 1년 ~ 서기 2021년
+                    평년 += 365
+                    윤년 += 366
+
+                    서기 2022년으로 잡으면 2022년 12월 31일까지의 기간을 세기 때문에 작년까지의 날 수를 구한다.
+
+                2단계) 1월 ~ 7월
+                    1 3 5 7 8 10 12 += 31 
+                    4 6 9 11        += 30
+                    2               += 29 (윤년)
+                    2               += 28 (평년)
+
+                3단계)
+                    += 10
+            */
+
+
+            // 1단계
+            let hap = 0;
+
+            for (let y = 1; y < cYear; y++) {
+                if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+                    hap += 366;
+                } else {
+                    hap += 365;
+                }
+            } // for end
+            
+
+            // 2단계
+            let mon = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (cYear % 4 == 0 && cYear % 100 != 0 || cYear % 400 == 0) {
+                mon[2] = 29;
+            } // if end
+            
+            for (let m = 1; m < cMonth; m++) {
+                hap = hap + mon[m];
+            }
+
+
+
+
+            // 0을 0번째 요소에 넣음으로서 1번째 요소는 1월, 7번째 요소는 7월이 되었다.
+
+            // 3단계
+            hap = hap + cDate;
+            document.write(cYear+"년 "+cMonth+"월 "+cMonth+"일")
+            document.write("<hr>");            
+            document.write("총 날수 : "+hap);
+            document.write("<hr>");
+
+            switch(hap % 7) {
+                case 0: document.write("일요일"); break;
+                case 1: document.write("월요일"); break;
+                case 2: document.write("화요일"); break;
+                case 3: document.write("수요일"); break;
+                case 4: document.write("목요일"); break;
+                case 5: document.write("금요일"); break;
+                case 6: document.write("토요일"); break;
+            } // switch end
+            document.write("<hr>");
+
+            let animal = ["원숭이", "닭", "개", "돼지", "쥐" , "소", "호랑이", "토끼", "용", "뱀", "말", "양"];
+
+            document.write("띠 : " + animal[cYear%12]);
+            document.write("<hr>");
+
+
+
+        </script>
+
+    </body>
+</html>

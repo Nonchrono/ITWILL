@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>01_switch.html</title>
+    </head>
+    <body>
+
+        <h3>switch~case문</h3>
+
+        <script>
+            /*
+                ● switch~case문
+                - 경우의 수의 목록 중에서 동일한 값을 찾아서 수행
+                - break : switch문을 빠져나옴
+                - default : 목록 중에 없는 경우 무조건 수행
+            */
+
+            //  1. 값 : 실수형으로 경우의 수는 사용 불가
+            /* switch(20) {
+                case 10 : document.write("SEOUL");
+                break;
+
+                case 20 : document.write("JEJU");
+                break;
+
+                case 30 : document.write("BUSAN");
+                break;
+            } */ // switch end
+            // 동일한 조건이기 때문에 이상, 이하 사용 불가
+            // case 값은 반드시 순차적이지 않아도 된다. 다만 순차적으로 하면 우리가 보기에 가시성이 올라간다.
+
+
+
+            // 2. default : 목록에 값이 없으면 무조건 수행
+            /* switch(40) {
+                case 10 : document.write("SEOUL");
+                break;
+
+                case 20 : document.write("JEJU");
+                break;
+
+                case 30 : document.write("BUSAN");
+                break;
+
+                default : document.write("기타..."); break;
+            } */ // switch end
+
+
+
+            // 3. break 문이 없으면
+            switch(20) {
+                case 10 : document.write("SEOUL"); break;
+
+                case 20 : document.write("JEJU");
+
+                case 30 : document.write("BUSAN"); break;
+
+                default : document.write("기타..."); break;
+            } // switch end
+
+        </script>
+    </body>
+</html>

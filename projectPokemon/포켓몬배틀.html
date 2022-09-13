@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>포켓몬 배틀</title>
+
+        <style>
+            #square_2 {
+                border: 7px double black;   
+                background-color: beige;            
+                width: 450px;
+                height: 450px;
+                margin: auto;
+                position: relative;
+            }
+
+            #menu_2 {
+                border: 5px double black;               
+                width: 425px;
+                height: 150px;
+                left: 12px;
+                bottom: 13px;
+                background-color: beige;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            #back_2 {
+                left: 10px;
+                top: 11px;
+                width: 429px;
+                height: 264px;
+                border: 2px solid black;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            #pokemon_back {
+                left: 88px;
+                bottom: 200px;
+                position: absolute;
+            }
+
+            #pokemon_front {
+                right: 79px;
+                top: 105px;
+                position: absolute;
+            }
+
+            .menu_2_1 {
+                position: absolute;
+                left: 4px;
+                top: 7px;
+                width: 180px;
+                height: 50px;
+                text-align: center;
+            }
+
+            .menu_2_2 {
+                position: absolute;
+                right: 24px;
+                top: 7px;
+                width: 180px;
+                height: 50px;
+                text-align: center;
+            }
+
+            .menu_2_3 {
+                position: absolute;
+                left: 4px;
+                bottom: 17px;
+                width: 180px;
+                height: 50px;
+                text-align: center;
+            }
+
+            .menu_2_4 {
+                position: absolute;
+                right: 24px;
+                bottom: 17px;
+                width: 180px;
+                height: 50px;
+                text-align: center;
+            }
+
+            .btn {
+                /* background-color: rgb(162, 161, 155); */
+                border: 2px solid #050505;
+                border-radius: 20px;
+                width: 200px;
+                height: 60px;
+                color: rgb(25, 25, 25);
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background: transparent;
+	            color: #161616;
+            }
+
+            .btn:active {
+            background-color: #d9d981;
+            box-shadow: 0 2px rgb(152, 152, 152);
+            transform: translateY(4px);
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+            <span>Pokemon</span>
+            <div id="square_2">
+                <div id="menu_2">
+                    <span class="menu_2_1">
+                        <button class="btn">싸우다</button>
+                    </span>
+                    <span class="menu_2_2">
+                        <button class="btn">가방</button>
+                    </span>
+                    <span class="menu_2_3">
+                        <button class="btn">교체</button>
+                    </span>
+                    <span class="menu_2_4">
+                        <button class="btn">도망가다</button>
+                    </span>
+                </div> <!-- menu_2 end -->
+                <div id="back_2">
+                    <img src="../sprite/background001.png" width="425px" height="260px" alt='배경'>
+
+                </div> <!-- back_2 end -->
+                <div id="pokemon_back">
+                    <img src="../sprite/pikachu_b.gif" alt="pokemon_back">
+
+
+                </div> <!-- pokemon_back end-->
+                <div id="pokemon_front">
+                    <img src="../sprite/pikachu.gif" alt="pokemon_front">
+
+
+                </div> <!-- pokemon_back end-->
+            </div> <!-- square_2 end -->
+
+        <script>
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>계산기3.html</title>
+
+        <style>
+            #result {
+                text-align: right;
+                height: 30px;
+                background-color: rgb(218, 239, 245);
+            }
+
+
+            td {
+                text-align: center;
+            }
+
+            button {
+                border: 1px solid black;
+                border-radius: 30%;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form>
+            <table border="1px">
+                <tr>
+                    <td colspan="4">
+                        <input type="text" id="result" size="20" value="0" readonly class="txt">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="  7  " onclick="inputData(7)">
+                    </td>
+                    <td>
+                        <input type="button" value="  8  " onclick="inputData(8)">
+                    </td>
+                    <td>
+                        <input type="button" value="  9  " onclick="inputData(9)">
+                    </td>
+                    <td>
+                        <input type="button" value="  /  " onclick="operator('/')">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="  4  " onclick="inputData(4)">
+                    </td>
+                    <td>
+                        <input type="button" value="  5  " onclick="inputData(5)">
+                    </td>
+                    <td>
+                        <input type="button" value="  6  " onclick="inputData(6)">
+                    </td>
+                    <td>
+                        <input type="button" value="  *  " onclick="operator('*')">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="  1  " onclick="inputData(1)">
+                    </td>
+                    <td>
+                        <input type="button" value="  2  " onclick="inputData(2)">
+                    </td>
+                    <td>
+                        <input type="button" value="  3  " onclick="inputData(3)">
+                    </td>
+                    <td>
+                        <input type="button" value="  -  " onclick="operator('-')">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="  0  " onclick="inputData('0')">
+                    </td>
+                    <td>
+                        <input type="button" value="  .  " onclick="">
+                    </td>
+                    <td>
+                        <input type="button" value="  =  " onclick="compute()">
+                    </td>
+                    <td>
+                        <input type="button" value="  +  " onclick="operator('+')">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="  ←  " onclick="backspace()"></td>
+                    <td colspan="2"><input type="button" value="  C  " onclick="cls()"></td>
+                </tr>
+            </table>
+        </form>
+
+
+        <script>
+            function cls() {
+                document.getElementById("result").value = 0;
+            }
+
+
+            function inputData(su) {
+                // alert(su);
+                document.getElementById("result").value = Number(document.getElementById("result").value += su);
+            }
+
+            let num1;
+            let num2;
+            let op;
+
+            function operator(delimiter) {
+                op = delimiter;
+
+                num1 = document.getElementById("result").value;
+                cls();
+            }
+
+            function backspace() {
+                let val = document.getElementById("result").value;
+
+                if (val.length > 1) {
+                    document.getElementById("result").value = val.substring(0, (val.length-1));
+                } else {
+                    cls();
+                }        
+            }
+
+            function compute() {
+                num2 = document.getElementById("result").value;
+                let com = 0;
+
+                switch (op) {
+                    case "/" :
+                        com = num1 / num2; break;
+
+                    case "*" :
+                        com = num1 * num2; break;
+
+                    case "-" : 
+                        com = num1 - num2; break;
+
+                    case "+" :
+                        com = num1 + num2; break;
+                }
+
+                document.getElementById("result").value = com;
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>18_rotate_copy.html</title>
+        <style>
+            #menu {
+                position: relative;
+                width: 150px;
+                height: 130px;
+                background-color: silver;
+                margin: auto;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            #menu:hover {
+                background-color: orange;
+            }
+
+            #menu>strong {
+                position: absolute;
+                left: 38px;
+                bottom: 15px;
+            }
+
+            #menu>.gear {
+                position: absolute;
+                background-image: url(../images/gear-gray.png);
+                width: 40px;
+                height: 40px;
+                background-size: 40px 40px;
+            }
+
+            #menu > .gear:nth-child(1) {
+                top: 16px;
+                left: 46px;
+            }
+
+            #menu > .gear:nth-child(2) {
+                top: 47px;
+                left: 64px;
+                transform: rotate(30deg);
+            }
+
+            #menu:hover>.gear {
+                background-image: url(../images/gear.png);
+                transition: .90s linear;
+            }
+            
+            #menu:hover>.gear:nth-child(1) {
+                transform: rotate(-180deg);
+            }
+
+            #menu:hover>.gear:nth-child(2) {
+                transform: rotate(150deg);
+            }
+
+        </style>
+    </head>
+    <body>
+      
+        <div id="menu">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <strong>SETTINGS</strong>
+        </div>
+
+    </body>
+</html>

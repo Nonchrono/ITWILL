@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>06_연산자.html</title>
+    </head>
+    <body>
+
+        <h3>연산자</h3>
+        
+        <script>
+            /* 
+            ● [연산자 Operator]
+            - 이식성이 풍부하다
+            - 산술, 비교, 논리 연산자
+            */    
+
+            //  1. 산술 연산자
+            document.write(5+3); // 8
+            document.write(5-3); // 2
+            document.write(5*3); // 15
+            document.write(5/3); // 1.666
+            document.write(5%3); // 나머지 2
+            document.write("<hr>");
+
+            document.write(3/5); // 0.6
+            document.write(3%5); // 나머지 3
+            document.write("<hr>");
+
+            // 2. 비교(관계) 연산자
+            // -> 논리형 (boolean)으로 반환된다.
+            // -> true, false
+            document.write(5>3);
+            document.write(5<3); 
+            document.write("<hr>");
+
+            document.write(5>=3);
+            document.write(5<=3); 
+            document.write("<hr>");
+
+
+            document.write(5==3); // 서로 같다
+            document.write(5!=3); // 서로 같지 않다
+            document.write("<hr>");
+
+            /* 3. 논리 연산자
+             -> 조건이 2개 이상일 경우 전체적으로 판단
+             결과값은 boolean 값으로 반환 (true, false)
+             그리고, 또는, 부정
+             */
+
+            /*  1) && 연산자
+                - 그리고, and 연산자
+                - 모든 조건이 true일 때만 true
+                - ~이면서 ~한 것
+            */
+            document.write(5<3 && 2<4);
+                    //    false   true
+                    //  따라서 전체 false
+            document.write("<hr>");
+
+            /*
+                2) || 연산자
+                - 또는, or 연산자
+                - 조건들 중에서 하나만이라도 true이면 true
+                - ~이거나 ~한 것
+            */
+           document.write(5<3 || 2<4);
+                    //   false   true 
+                    //   true   
+            document.write("<hr>");
+
+            /*
+                3) ! 연산자
+                - 논리 부정 연산자, not 연산자
+                -  ~ 아니라면
+            */
+                let flag = true;
+                document.write(!flag); // 출력되는 건 false
+
+
+
+        </script>
+    </body>
+</html>
