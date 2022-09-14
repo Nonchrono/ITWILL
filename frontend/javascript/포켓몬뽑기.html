@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>포켓몬뽑기.html</title>
+
+        <style>
+            #square {
+                border: 7px double black;   
+                background-color: beige;            
+                width: 450px;
+                height: 450px;
+                margin: auto;
+                position: relative;
+            }
+
+            #menu {
+                border: 5px double black;               
+                width: 425px;
+                height: 150px;
+                left: 12px;
+                bottom: 13px;
+                background-color: beige;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            #back {
+                left: 10px;
+                top: 11px;
+                width: 429px;
+                height: 264px;
+                border: 2px solid black;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            .menu1 {
+                position: absolute;   
+                border: 2px solid black;     
+                border-radius: 20px;
+                width: 180px;
+                height: 50px;
+                left: 4px;
+                top: 7px;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            .pokemon {
+                position: absolute;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <div id="square">
+            <div id="menu">
+                
+                <button onclick="rdpoke()" class="menu1">
+                    랜덤 뽑기
+                </button>
+
+                <div id="charmander" style="display: none;" class="pokemon">
+                    <img src="../sprite/charmander.gif" alt="파이리">
+                </div>
+    
+                <div id="squirtle" style="display: none;" class="pokemon">
+                    <img src="../sprite/squirtle.gif" alt="꼬부기">
+                </div>
+    
+                <div id="bulbasaur" style="display: none;" class="pokemon">
+                    <img src="../sprite/bulbasaur.gif" alt="이상해씨">
+                </div>
+    
+                <div id="pikachu" style="display: none;" class="pokemon">
+                    <img src="../sprite/pikachu.gif" alt="피카츄">
+                </div>
+    
+                <div id="hitmonchan" style="display: none;" class="pokemon">
+                    <img src="../sprite/hitmonchan.gif" alt="홍수몬">
+                </div>
+            </div> <!-- menu end -->
+
+            <div id="back">
+                <img src="../sprite/oak001.png" width="425px" height="260px" alt='배경'>
+            </div> <!-- back end -->
+        </div> <!-- square end -->
+
+
+        <script>
+            let pokenum = 0;
+
+            function rdpoke() {
+                let rdpokemon = parseInt(Math.random()*100+1);
+
+                if (rdpokemon >= 1 && rdpokemon <= 30) {
+                    document.getElementById("charmander").style.display="block";
+                    document.getElementById("squirtle").style.display="none";
+                    document.getElementById("bulbasaur").style.display="none";
+                    document.getElementById("pikachu").style.display="none";
+                    document.getElementById("hitmonchan").style.display="none";
+                    pokenum = 1;
+                } else if (rdpokemon >= 31 && rdpokemon <= 60) {
+                    document.getElementById("charmander").style.display="none";
+                    document.getElementById("squirtle").style.display="block";
+                    document.getElementById("bulbasaur").style.display="none";
+                    document.getElementById("pikachu").style.display="none";
+                    document.getElementById("hitmonchan").style.display="none";
+                    pokenum = 2;
+                } else if (rdpokemon >= 61 && rdpokemon <= 90) {
+                    document.getElementById("charmander").style.display="none";
+                    document.getElementById("squirtle").style.display="none";
+                    document.getElementById("bulbasaur").style.display="block";
+                    document.getElementById("pikachu").style.display="none";
+                    document.getElementById("hitmonchan").style.display="none";
+                    pokenum = 3;
+                } else if (rdpokemon >= 91 && rdpokemon <= 96) {
+                    document.getElementById("charmander").style.display="none";
+                    document.getElementById("squirtle").style.display="none";
+                    document.getElementById("bulbasaur").style.display="none";
+                    document.getElementById("pikachu").style.display="block";
+                    document.getElementById("hitmonchan").style.display="none";
+                    pokenum = 4;
+                } else {
+                    document.getElementById("charmander").style.display="none";
+                    document.getElementById("squirtle").style.display="none";
+                    document.getElementById("bulbasaur").style.display="none";
+                    document.getElementById("pikachu").style.display="none";
+                    document.getElementById("hitmonchan").style.display="block";
+                    pokenum = 5;
+                }
+            };
+
+            
+            
+            
+
+
+            
+
+
+
+
+        </script>
+    </body>
+</html>
