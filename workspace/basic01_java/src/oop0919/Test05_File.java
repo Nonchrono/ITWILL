@@ -15,7 +15,7 @@ public class Test05_File {
 			// 경로명 + 파일명
 			
 			// 경로명+파일명 \ 기호를 사용하려면 \\ 기호를 2번씩 사용함
-			// String pathname="D:\\Java202207\\sangnamja.jpg";
+			// String pathname="D:\\Java202207\\공지사항.txt";
 			
 			// 경로명으로 / 기호도 사용가능하다
 			String pathname = "D:/Java202207/공지사항.txt";
