@@ -68,7 +68,7 @@ public class Test05_sungjuk {
 			
 			
 			// 값 받아오기
-			for (int i = 0; i < aver.length; i++) {
+			for (int i = 0; i < size; i++) {
 				String[] str = br.readLine().split(",");
 				
 				name[i] = str[0];
