@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>pokemon_main.html</title>
         <link rel="stylesheet" href="pokemon_main.css">
+        <!-- jQuery import -->
+        <script src="jquery-3.6.1.min.js"></script>
     </head>
     <body>
 
@@ -202,11 +204,11 @@
 
             // 가방
             function bag() {
-                document.getElementById('menu_2').style.display='none';
-                document.getElementById('back_2').style.display='none';
-                document.getElementById('pokemon_back').style.display='none';
-                document.getElementById('pokemon_front').style.display='none';
-                document.getElementById("baglist").style.display='block';
+                $("#menu_2").css("display", "none");
+                $("#back_2").css("display", "none");
+                $("#pokemon_back").css("display", "none");
+                $("#pokemon_front").css("display", "none");
+                $("#baglist").css("display", "block");
             }
 
             // 가위표 누르고 다시 배틀로
