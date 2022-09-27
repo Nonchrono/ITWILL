@@ -72,17 +72,16 @@
                 let hour = now.hour();
                 let min = now.minute();
                 let sec = now.second();
+                let msec = now.millisecond();
 
                 // 4) 초, 분, 시 이미지 각도 꺾기 (한바퀴 360도)
-                $("#sec").css("transform", "rotate("+(sec*6)+"deg)");  // 60초 / 360도
+                $("#sec").css("transform", "rotate("+((sec*6)+(msec*0.006))+"deg)");  // 60초 / 360도
 
-                $("#min").css("transform", "rotate("+(min*6+sec*0.1)+"deg)"); // 60분 / 360도
+                $("#min").css("transform", "rotate("+((min*6)+(sec*0.1))+"deg)"); // 60분 / 360도
 
-                $("#hour").css("transform", "rotate("+(hour*30+min*0.5)+"deg)"); // 12시간 / 360도
+                $("#hour").css("transform", "rotate("+((hour*30)+(min*0.5))+"deg)"); // 12시간 / 360도
 
-                // 5) 1초마다 주기적으로 함수 호출 (매초 움직이기)
-                timer = setTimeout(showtime, 1000);
-
+                
                 /*
                     $(document).ready(function() {
                         setInterval("showtime()", 1000);
@@ -90,7 +89,8 @@
                 */
             } // showtime() end
 
-
+            // 5) 1초마다 주기적으로 함수 호출 (매초 움직이기)
+            timer = setInterval(showtime, 1);
 
         </script>
 
