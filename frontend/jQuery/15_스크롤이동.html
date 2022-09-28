@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>15_스크롤이동.html</title>
+        <!-- jQuery import -->
+        <script src="jquery-3.6.1.min.js"></script>
+        <link rel="stylesheet" href="../css/reset.css"/>
+        <link rel="stylesheet" href="scroll.css"/>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <h1>로고</h1>
+                <div id="nav">
+                    <h2 class="hide">메인메뉴</h2>
+                    <ul>
+                        <li class="now"><a href="">박스1보기</a></li>
+                        <li><a href="">박스2보기</a></li>
+                        <li><a href="">박스3보기</a></li>
+                        <li><a href="">박스4보기</a></li>
+                        <li><a href="">박스5보기</a></li>
+                    </ul>
+                </div><!-- #nav end -->
+            </div> <!-- #header end -->
+            <div id="content">
+                <div id="box1"><h2>박스1</h2></div>
+                <div id="box2"><h2>박스2</h2></div>
+                <div id="box3"><h2>박스3</h2></div>
+                <div id="box4"><h2>박스4</h2></div>
+                <div id="box5"><h2>박스5</h2></div>
+            </div> <!-- #content end -->
+            <div id="footer">
+                &copy; 2022 ITWILL
+            </div> <!-- #footer end -->
+            <div id="topBtn">
+                <a href="#wrap">TOP</a>
+            </div> <!-- #topBtn end -->
+        </div> <!-- #wrap end -->
+
+
+        <script>
+            $("#nav li").click(function(e) {
+                //alert("test");
+                //alert(e);
+
+                // e라는 변수에 클릭이라는 이벤트를 받는다는 의미
+                // e 클릭 이벤트를 받는 객체
+
+                //브라우저가 가진 기본 기능 막기
+                // 내부 링크 안 걸림
+                // <a> 태그의 기본 동작을 방지한다. 클릭해도 리로드가 일어나지 않는다.
+                e.preventDefault();
+
+                // 사용자가 클릭한 li 요소의 index 얻기
+                let idx = $(this).index();
+                // alert(idx);
+
+                // 각 id=box1 ~ box5의 윗쪽 여백
+                // alert($("#box1").offset().top);     // 122
+                // alert($("#box2").offset().top);     // 722
+                // alert($("#box3").offset().top);     // 1722
+                // alert($("#box4").offset().top);     // 2122
+                // alert($("#box5").offset().top);     // 2922
+
+                // top 위치에서 122만큼 빼야한다. 상단의 로고와 메뉴에 삼켜지면 안 되기 때문
+
+                let bTop = $("#box" + (idx+1)).offset().top;
+
+                // 스크롤 애니메이션 처리
+                // $("body") 브라우저마다 처리하는 객체가 다름
+                // 122 -> id=box1의 왼쪽 여백
+                // 300 -> 애니메이션 실행 속도
+                $("body, html").animate({scrollTop:bTop-122}, 300);
+            });
+            
+        </script>
+
+    </body>
+</html>

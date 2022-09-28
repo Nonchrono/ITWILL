@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>17_ajax.html</title>
+        <!-- jQuery import -->
+        <script src="jquery-3.6.1.min.js"></script>
+        <style>
+
+
+        </style>
+    </head>
+    <body>
+
+        <button>* JSON 데이터 받아오기 *</button>
+        
+        <script>
+            $("button").click(function(){
+                // 서버와 클라이언트 간의 중계자 역할을 하는 함수 ajax()
+                $.ajax("actor.json", {
+                    dataType:"json"
+                    ,error  :function(xhr, status, error) {
+                        alert("ERROR!!");
+                        alert(xhr);
+                        alert(status);  // 응답 상황 (error로 고정)
+                        alert(error);   // not found
+                    }
+                    ,success:function(result, status, xhr) {
+                        alert("SUCCESS~~");
+                        alert(result);  // 서버가 응답해준 객체 형태의 메세지
+                        alert(status);  // 응답 상황 (success로 고정)
+                        alert(xhr);     // XMLHttpRequest 객체
+                    }
+                }); // ajax() end
+            }); // click end
+        
+        </script>
+
+    </body>
+</html>
