@@ -53,7 +53,7 @@
                     <button class="btn">싸우다</button>
                 </span>
                 <span class="menu_2_2">
-                    <button class="btn" onclick="bag()">가방</button>
+                    <button class="btn">가방</button>
                 </span>
                 <span class="menu_2_3">
                     <button class="btn">교체</button>
@@ -83,7 +83,7 @@
 
             <!-- 가방 리스트 -->
             <div id="baglist">
-                <img src="sprite/crossmark.png" width="20px" height="20px" onclick="bagToBattle()" id="crossmark" alt="가위표">
+                <!-- <img src="sprite/crossmark.png" width="20px" height="20px" onclick="bagToBattle()" id="crossmark" alt="가위표"> -->
             </div>
         </div> <!-- square_2 end -->
 
@@ -203,22 +203,26 @@
             }
 
             // 가방
-            function bag() {
-                $("#menu_2").css("display", "none");
-                $("#back_2").css("display", "none");
-                $("#pokemon_back").css("display", "none");
-                $("#pokemon_front").css("display", "none");
-                $("#baglist").css("display", "block");
-            }
+            // function bag() {
+            //     $("#menu_2").css("display", "none");
+            //     $("#back_2").css("display", "none");
+            //     $("#pokemon_back").css("display", "none");
+            //     $("#pokemon_front").css("display", "none");
+            //     $("#baglist").css("display", "block");
+            // }
 
             // 가위표 누르고 다시 배틀로
-            function bagToBattle() {
-                document.getElementById('menu_2').style.display='block';
-                document.getElementById('back_2').style.display='block';
-                document.getElementById('pokemon_back').style.display='block';
-                document.getElementById('pokemon_front').style.display='block';
-                document.getElementById("baglist").style.display='none';
-            }
+            // function bagToBattle() {
+            //     document.getElementById('menu_2').style.display='block';
+            //     document.getElementById('back_2').style.display='block';
+            //     document.getElementById('pokemon_back').style.display='block';
+            //     document.getElementById('pokemon_front').style.display='block';
+            //     document.getElementById("baglist").style.display='none';
+            // }
+
+            $(".menu_2_2").click(function() {
+                $("#baglist").css("display", "flex");
+            });
 
         </script>
 
