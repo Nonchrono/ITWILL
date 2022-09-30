@@ -1,0 +1,57 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-image: url(../images/shinback.png);
+    background-size: cover;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Rix짱구-M';
+  }
+  .bg-2 { 
+    background-color: #92faa0;
+    color: #0b0b0b;
+  }
+  .bg-3 { 
+    background-color: #ffffff;
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: rgb(255, 82, 82); /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  #shinscroll {
+    position: relative;
+    left: 1%;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+  }
+  #aboutTime {
+    text-align: center;
+    font-family: 'Rix짱구-M';
+  }
+  @font-face {
+    font-family: 'Rix짱구-M';
+    src: url('Rix짱구-M.woff') format('woff');
+  }

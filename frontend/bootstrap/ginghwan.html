@@ -1,0 +1,159 @@
+<!DOCTYPE html>  
+<html lang="ko">
+    <head>
+        <title>12_myweb인트로.html</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="clock.js"></script>
+        <!-- <script src="scroll.js"></script> -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- layout.css import -->
+        <link rel="stylesheet" href="layout2.css">
+        <script>
+            
+            //  1) 스크롤 하고자 하는 이미지를 전역변수에 저장
+            let ctnt=[]; // 배열 선언
+            ctnt[0]="<img src='../images/001.png' width='85'>";
+            ctnt[1]="<img src='../images/002.png' width='85'>";
+            ctnt[2]="<img src='../images/003.png' width='85'>";
+            ctnt[3]="<img src='../images/004.png' width='85'>";
+            ctnt[4]="<img src='../images/005.png' width='85'>";
+            ctnt[5]="<img src='../images/006.png' width='85'>";
+            ctnt[6]="<img src='../images/007.png' width='85'>";
+            ctnt[7]="<img src='../images/008.png' width='85'>";
+
+            // 2) 1)에서 준비한 이미지를 id=mydiv에 배치하기
+            function start() {
+                /*
+                document.write("<div id='area0' style='position: absolute; top:0; left:0'>")
+                document.write(ctnt[0]);
+                document.write("</div>");
+
+                document.write("<div id='area1' style='position: absolute; top:0; left:90px'>")
+                document.write(ctnt[1]);
+                document.write("</div>");
+                */
+
+                // 문) 반복문을 활용해서 이미지 8장 배치하기
+                for(let i=0; i<ctnt.length; i++) {
+                    document.write("<div id='area" + i + "' style='position: absolute; top:0; left:" + i*90 + "px'>");
+                    document.write(ctnt[i]);
+                    document.write("</div>");
+                }
+
+                // 3) 3초 후에 scroll 함수 1번 호출
+                setTimeout(scroll, 3000);
+
+            } // start end
+
+            // 4) 이미지 스크롤
+            function scroll() {
+                // alert("메롱");
+                // alert(document.getElementById("area0").style); // [object HTMLDivElement]
+                // alert(document.getElementById("area0").style); // [object CSSStyleDeclaration]
+                // alert(document.getElementById("area0").style.left); // 0px
+
+                // 5) id=area0의 스타일을 가져와서 왼쪽 여백값을 -10px만큼 줄이기
+                // let tmp=document.getElementById("area0").style;
+                // tmp.left = parseInt(tmp.left)-10 + "px";
+
+                // 내 풀이
+                /* for(let i=0; i<ctnt.length; i++) {
+                    let tmp=document.getElementById("area"+i).style;
+                    if(parseInt(tmp.left)>=-90){
+                        tmp.left = parseInt(tmp.left) - 10 + "px";
+                    } else {
+                        tmp.left = (ctnt.length-1)*90 + "px"
+                    }
+                } */
+                
+                for(let i=0; i<ctnt.length; i++) {
+                    let tmp=document.getElementById("area"+i).style;
+                    tmp.left = parseInt(tmp.left) - 10 + "px";
+                    
+                    if(parseInt(tmp.left)<=-90){
+                        tmp.left = (ctnt.length-1)*90 + "px"
+                    }
+                }              
+
+                // 6) 0.5초 후 scroll함수 호출
+                timer=setTimeout(scroll, 200);
+
+            } // scroll end
+
+            // 13) 6)의 시간을 해제
+            var timer; // 전역변수
+
+            function ktime() {
+                clearTimeout(timer);
+            } // killtime end
+        </script>
+
+    </head>
+    <body> 
+        
+        <!-- 메인 카테고리 시작 -->
+        <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">HOME</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">포토갤러리</a></li>
+                <li><a href="#">메일 보내기</a></li>
+            </ul>
+            </div>
+        </div>
+        </nav> <!-- 메인 카테고리 끝 -->
+        
+        <!-- Content 시작 -->
+        <!-- First Container -->
+        <div class="container-fluid bg-1 text-center">
+        <h3 id="title" class="margin">Do You Know Pac-Man</h3>
+        <img src="../images/miniproj/title.png" class="img-responsive img-rounded margin" style="display:inline" alt="vases" width="350" height="350">
+        </div> <!-- First Container 끝 -->
+        
+        <!-- Second Container -->
+        <div class="container-fluid bg-2 text-center">
+            <div class="row">
+                <!-- 본문 시작 -->   
+                <div id="mm2">
+                    <script> start(); </script>
+                </div>                                    
+                    <button type="button" class="btn btn-success" onclick="start()">도망쳐!!</button>
+                    <button type="button" class="btn btn-danger" onclick="ktime()">그만 괴롭혀!</button><br><br><br>
+                    <div id="clock">
+                        <script>showtime();</script>
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="showtime()">시계 움직이기</button>
+                    <button type="button" class="btn btn-danger" onclick="killtime()">시계 멈추기</button>
+                <!-- 본문 끝 -->
+            </div> <!-- row 끝 -->
+        </div> <!-- Second Container 끝 -->
+        <!-- Content 끝 -->
+
+        <!-- Footer -->
+        <footer class="container-fluid bg-4 text-center">
+        <p>Copyright &copy; 2022 MyWeb</p> 
+        </footer>    
+
+        
+
+    </body>
+</html>
+          

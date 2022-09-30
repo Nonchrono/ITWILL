@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>12_myweb인트로.html</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="../jQuery/moment-with-locales.js"></script>
+        <!-- layout.css import -->
+        <link rel="stylesheet" href="layout.css">
+
+        <script>
+          let ctnt = []; // 배열선언
+          ctnt[0] = "<img src='../images/shin001.png' width='85px'>";
+          ctnt[1] = "<img src='../images/shin002.png' width='58px'>";
+          ctnt[2] = "<img src='../images/shin003.png' width='85px'>";
+          ctnt[3] = "<img src='../images/shin004.png' width='85px'>";
+          ctnt[4] = "<img src='../images/shin005.png' width='85px'>";
+          ctnt[5] = "<img src='../images/shin006.png' width='85px'>";
+          ctnt[6] = "<img src='../images/shin007.png' width='85px'>";
+          ctnt[7] = "<img src='../images/shin008.png' width='85px'>";
+  
+          function start() {
+            // 이미지 8장 배치하기
+            for (let i = 0; i < ctnt.length; i++) {
+                      document.write("<div id='area" + i + "' style='position: absolute; top: 5px; left: " + i*200 + "px;'>");
+                      document.write(ctnt[i]);
+                      document.write("</div>");
+                  } // for end
+  
+                  // 3) 3초 후에 scroll 함수 1번 호출 
+                  setTimeout(scroll, 2000);
+          } // start() end
+  
+          function scroll() {
+                  // 5) id = area0의 스타일을 가져와서 왼쪽 여백값을 -10px만큼 줄이기
+  
+                  for (let i =0; i < ctnt.length; i++) {
+                      let tmp = document.getElementById('area'+i).style;
+                      tmp.left = parseInt(tmp.left) - 10 + "px";
+  
+                      if (parseInt(tmp.left) <= -200) {
+                          tmp.left = (ctnt.length-1)*200 + "px";
+                      } // if end
+                  } // for end
+                  
+                  //  6) 0.5초 후에 scroll() 함수를 호출
+                  timer = setTimeout(scroll, 300);
+              } // scroll() end
+  
+              // 13) 6)의 시간을 해제
+              var timer;
+  
+              function killtime() {
+                  clearTimeout(timer);
+              } // killtime() end
+        </script>
+
+      </head>
+      <body onunload="killtime()">
+      
+      <!-- 메인 카테고리 시작 -->
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#">Home</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">게시판</a></li>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">포토 갤러리</a></li>
+              <li><a href="#">메일 보내기</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav> <!-- 메인 카테고리 끝 -->
+      
+      <!-- Content 시작 -->
+      <!-- First Container 시작 -->
+      <div class="container-fluid bg-1 text-center">
+        <div>
+          <img src="../images/shinlogo.png" style="display:inline" width="200px">
+        </div>
+        <h3></h3>
+        
+        <img src="../images/shinchan.jpg" class="img-responsive img-thumbnail margin" style="display:inline" alt="shinchan" width="350" height="350">
+      </div>
+      <!-- First Container 끝 -->
+      
+      <!-- Second Container -->
+      <div class="container-fluid bg-2 text-center">
+        <div class="row">
+            <!-- 여기에 시작 -->
+            <div id="aboutTime">
+              <script>
+                let now = moment();
+
+                moment.locale("ko");
+                var fullDate = now.format("YYYY년 MM월 DD일");
+                $("#aboutTime").text(fullDate);
+              </script>
+            </div>
+            <div id="shinscroll"><script> start(); </script></div>
+            <!-- 본문 끝 -->
+        </div> <!-- row 끝 -->
+      </div> <!-- Second 끝 -->
+      
+      <!-- Footer -->
+      <footer class="container-fluid bg-4 text-center">
+          Copyright &copy; 2022 MyWeb 
+      </footer>
+      
+      </body>
+      </html>
+      
