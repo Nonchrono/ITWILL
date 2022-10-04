@@ -31,7 +31,7 @@
                       document.write("</div>");
                   } // for end
   
-                  // 3) 3초 후에 scroll 함수 1번 호출 
+                  // 3) 2초 후에 scroll 함수 1번 호출 
                   setTimeout(scroll, 2000);
           } // start() end
   
@@ -39,6 +39,8 @@
                   // 5) id = area0의 스타일을 가져와서 왼쪽 여백값을 -10px만큼 줄이기
   
                   for (let i =0; i < ctnt.length; i++) {
+                      // let tmp = $('#area'+i).offset().left;
+                      // $('#area'+i).css("left", tmp-10+"px");
                       let tmp = document.getElementById('area'+i).style;
                       tmp.left = parseInt(tmp.left) - 10 + "px";
   
@@ -48,12 +50,12 @@
                   } // for end
                   
                   //  6) 0.5초 후에 scroll() 함수를 호출
-                  timer = setTimeout(scroll, 300);
+                  timer = setTimeout(scroll, 200);
               } // scroll() end
   
-              // 13) 6)의 시간을 해제
               var timer;
-  
+
+              // 13) 6)의 시간을 해제
               function killtime() {
                   clearTimeout(timer);
               } // killtime() end
@@ -110,6 +112,8 @@
                 $("#aboutTime").text(fullDate);
               </script>
             </div>
+            <button type="button" class="btn btn-success" onclick="scroll()">START</button>
+            <button type="button" class="btn btn-danger" onclick="killtime()">STOP</button>
             <div id="shinscroll"><script> start(); </script></div>
             <!-- 본문 끝 -->
         </div> <!-- row 끝 -->
