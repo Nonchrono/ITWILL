@@ -15,8 +15,8 @@ public class Test03_update {
 			String url		="jdbc:oracle:thin:@localhost:1521:xe";		// 127.0.0.1 이라고 써도 동일 // 1521는 오라클의 호스트 번호
 			String user		="system";
 			String password	="1234";
-			String diver	="oracle.jdbc.driver.OracleDriver";	// ojdbc6.jar
-			Class.forName(diver);
+			String driver	="oracle.jdbc.driver.OracleDriver";	// ojdbc6.jar
+			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url, user, password);	
 			System.out.println("오라클DB 서버 연결 성공!");
 			

@@ -19,8 +19,8 @@ public class Test01_selectCount {
 			String url		="jdbc:oracle:thin:@localhost:1521:xe";
 			String user		="system";
 			String password	="1234";
-			String diver	="oracle.jdbc.driver.OracleDriver";	// ojdbc6.jar
-			Class.forName(diver);
+			String driver	="oracle.jdbc.driver.OracleDriver";	// ojdbc6.jar
+			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);	
 			System.out.println("오라클DB 서버 연결 성공!");
 			
