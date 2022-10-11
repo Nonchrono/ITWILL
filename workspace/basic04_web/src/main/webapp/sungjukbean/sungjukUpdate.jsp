@@ -18,9 +18,6 @@
 		<button type="button" onclick="location.href='sungjukList.jsp'" class="btn btn-secondary">성적목록</button>
 	</p>
 <%
-	//한글 인코딩
-	request.setCharacterEncoding("UTF-8");
-
 	// 수정하고자 하는 글 번호 sungjukUpdate.jsp?sno=62
 	int sno = Integer.parseInt(request.getParameter("sno"));
 

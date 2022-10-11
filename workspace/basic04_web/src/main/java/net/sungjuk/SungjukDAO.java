@@ -19,6 +19,27 @@ public class SungjukDAO {	// Data Access Object
 	public SungjukDAO() {
 		dbopen = new DBOpen();
 	} // end
+
+	// bean 구조를 쓰지 않았을 때의 예시! dto에 값을 담지 않으니 매개변수가 많이 길어진다.
+	/*
+	 * public int insert (int sno, String uname, int kor, int eng, int mat, int
+	 * aver, int addr, String wdate) { int cnt=0; // 성공 또는 실패 여부 반환 try { con =
+	 * dbopen.getConnection(); // DB 연결
+	 * 
+	 * StringBuilder sql = new StringBuilder(); sql.
+	 * append(" INSERT INTO sungjuk(sno, uname, kor, eng, mat, aver, addr, wdate) "
+	 * ); sql.append(" VALUES (sungjuk_seq.nextval, ?, ?, ?, ?, ?, ?, sysdate) ");
+	 * 
+	 * pstmt = con.prepareStatement(sql.toString()); pstmt.setString(1,
+	 * dto.getUname()); pstmt.setInt(2, dto.getKor()); pstmt.setInt(3,
+	 * dto.getEng()); pstmt.setInt(4, dto.getMat()); pstmt.setInt(5, dto.getAver());
+	 * pstmt.setString(6, dto.getAddr());
+	 * 
+	 * cnt = pstmt.executeUpdate(); // 실행했을 때 행의 갯수가 반환
+	 * 
+	 * } catch (Exception e) { System.out.println("행 추가 실패 : "+e); } finally {
+	 * DBClose.close(con, pstmt); } // end return cnt; } // Create() end
+	 */
 	
 	public int create (SungjukDTO dto) {
 		int cnt=0; // 성공 또는 실패 여부 반환

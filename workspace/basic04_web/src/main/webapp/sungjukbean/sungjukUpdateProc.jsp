@@ -14,25 +14,24 @@
 	<h3>* 성적 수정 *</h3>
 
 <% 
-	//한글 인코딩
-	request.setCharacterEncoding("UTF-8");
-
 	// 사용자가 입력한 정보를 가져와서 변수에 담기
+	int sno = Integer.parseInt(request.getParameter("sno"));		// 글번호
 	String uname = request.getParameter("uname").trim();
 	int kor = Integer.parseInt(request.getParameter("kor").trim());
 	int eng = Integer.parseInt(request.getParameter("eng").trim());
 	int mat = Integer.parseInt(request.getParameter("mat").trim());
 	String addr = request.getParameter("addr");
 	int aver=(kor+eng+mat)/3;
-	
+
 	// 2) dto 객체를 사용한 경우
 	// 전달값을 모두 dto 객체에 담기
 	dto.setUname(uname);
-	dto.setKor(eng);
+	dto.setKor(kor);
 	dto.setEng(eng);
 	dto.setMat(mat);
 	dto.setAver(aver);
 	dto.setAddr(addr);
+	dto.setSno(sno);
 	
 	int cnt = dao.updateproc(dto);
 	
@@ -41,7 +40,7 @@
 		out.println("<p><a href='javascript:history.back()'>[다시시도]</a></p>");
 	} else {
 		out.println("<script>");
-		out.println("	alert('성적이 입력되었습니다~');");
+		out.println("	alert('성적이 수정되었습니다~');");
 		out.println("	location.href='sungjukList.jsp'");
 		out.println("</script>");
 	} // if end
