@@ -46,9 +46,10 @@
 		<td><%=dto.getKor()%></td>
 		<td><%=dto.getEng()%></td>
 		<td><%=dto.getMat()%></td>
-		<td><%=dto.getWdate().substring(0,10)%></td>
+		<td><%=dto.getWdate().substring(0, 10)%></td>
 		<td><a href="sungjukRead.jsp?sno=<%=dto.getSno()%>">[상세보기]</a></td>
 	</tr>
+
 <%
 		} // for end
 	} // if end

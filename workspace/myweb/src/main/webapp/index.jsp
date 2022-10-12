@@ -11,15 +11,17 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/moment-with-locales.js"></script>
   
   <!-- 사용자 정의 스타일과 자바스크립트 -->
   <!-- 주의사항 : CSS와 JS는 각 웹브라우저에서 쿠키 삭제하고 확인할 것 -->
   <!-- layout.css import -->
   <link rel="stylesheet" href="./css/layout.css">
-
+  <script src="./js/clock.js"></script>
+  <script src="./js/myscript.js"></script>
 
 </head>
-<body>
+<body onload="showtime()">
 
 <!-- 메인 카테고리 시작 -->
 <!-- Navbar -->
@@ -31,7 +33,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Home</a>
+      <%--<div style="display:inline-block;	vertical-align:top;">
+      <a class="navbar-brand" href="<%=request.getContextPath()%>/index2.jsp">
+      	<img src="./images/house.png">
+      </a> 
+      </div>--%>
+      <div>
+      <a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">
+      	Home
+      </a>
+      </div>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -46,9 +57,13 @@
 </nav> <!-- 메인 카테고리 끝 -->
 
 <!-- First Container 시작 -->
-<div class="container-fluid bg-1 text-center">
-  <h3 class="margin">Who Am I?</h3>
-  <img src="./images/shinchan.jpg" class="img-thumbnail" style="display:inline" alt="신짱" width="50%">
+<div class="container-fluid bg-1 text-center" id="background">
+  <div>
+   <img src="./images/shinlogo.png" alt="로고" style="display:inline" width="12%">
+  </div>
+  <h3></h3>
+
+  <img src="./images/shinchan000.gif" class="img-responsive img-thumbnail margin" style="display:inline" alt="짱구" width="30%">
 </div> <!-- 메인 카테고리 끝 -->
 
 <!-- Contents 시작 -->
@@ -56,7 +71,7 @@
   <div class="row">
     <div class="col-sx-12">
     	<!-- 본문 시작 -->
-    	본문은 여기에 작성해주세요~
+           <div id="clock"></div>
     	<!-- 본문 끝 -->
     </div> <!-- col 끝 -->
   </div> <!-- row 끝 -->

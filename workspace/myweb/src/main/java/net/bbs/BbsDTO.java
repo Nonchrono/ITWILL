@@ -7,7 +7,7 @@ public class BbsDTO { // 전송객체
 	private String subject;
 	private String content;
 	private String passwd;
-	private String readcnt;
+	private int readcnt;
 	private String regdt;
 	private int grpno;
 	private int indent;
@@ -57,11 +57,11 @@ public class BbsDTO { // 전송객체
 		this.passwd = passwd;
 	}
 
-	public String getReadcnt() {
+	public int getReadcnt() {
 		return readcnt;
 	}
 
-	public void setReadcnt(String readcnt) {
+	public void setReadcnt(int readcnt) {
 		this.readcnt = readcnt;
 	}
 

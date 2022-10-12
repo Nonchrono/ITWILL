@@ -15,7 +15,7 @@ create table tb_bbs(
  ,regdt    date            default  sysdate   -- 글작성일
  ,grpno    number(5)       not null  -- 글 그룹번호
  ,indent   number(5)       default 0 -- 들여쓰기
- ,ansnum   number(5)       default 0 -- 글순서
+ ,ansnum   number(5)       default 0 -- 답변 번호
  ,ip       varchar2(15)    not null  -- 사용자 요청 PC의 IP
  ,primary key(bbsno)                 --bbsno 기본키 
 );
@@ -54,3 +54,25 @@ select nvl(max(bbsno), 0)+1 from tb_bbs;
 -- 행 추가
 insert into tb_bbs(bbsno, wname, subject, content, passwd, ip, grpno)
 values (bbs_seq.nextval, ?, ?, ?, ?, ?, (select nvl(max(bbsno), 0)+1 from tb_bbs));
+
+
+-- 전체목록
+select bbsno, wname, subject, readcnt, regdt
+from tb_bbs
+order by grpno desc, ansnum asc;
+-- 그룹넘버는 역순, 답변 번호는 순서대로
+
+
+-- 상세보기
+select * from tb_bbs where bbsno=?
+
+-- 행삭제
+delete  FROM tb_bbs where bbsno=? and passwd=?
+
+-- 행수정
+update tb_bbs set wname=?, subject=?, content=?, ip=?
+where bbsno=? and passwd=?
+
+-- 조회수 증가
+update tb_bbs set readcnt=readcnt+1
+where bbsno=?

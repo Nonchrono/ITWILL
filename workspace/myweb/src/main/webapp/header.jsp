@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>index.jsp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,13 +10,13 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="../jQuery/moment-with-locales.js"></script>
   
   <!-- 사용자 정의 스타일과 자바스크립트 -->
   <!-- 주의사항 : CSS와 JS는 각 웹브라우저에서 쿠키 삭제하고 확인할 것 -->
   <!-- layout.css import -->
   <link rel="stylesheet" href="../css/layout.css">
-
+  <script src="../js/clock.js"></script>
+  <script src="../js/myscript.js"></script>
 
 </head>
 <body>
@@ -32,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="<%=request.getContextPath()%>/index2.jsp">Home</a>
+      <a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Home</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
