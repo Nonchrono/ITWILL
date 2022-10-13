@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ba54181-d524-40a7-8474-14edfbc9a612" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/workspace/basic04_web/src/main/webapp/sungjukbean/sungjukUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/basic04_web/src/main/webapp/sungjukbean/sungjukUpdate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/basic04_web/src/main/webapp/sungjukbean/sungjukUpdateProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/basic04_web/src/main/webapp/sungjukbean/sungjukUpdateProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.67/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-9.0.67/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/Servers/Tomcat v9.0 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/Servers/Tomcat v9.0 Server at localhost-config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Fy0OuZpdF6MPQduHsSIsH6zQDY" />
   <component name="ProjectViewState">
@@ -23,7 +28,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Java202207/workspace/basic04_web"
+    "last_opened_file_path": "D:/projectPokemon"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -35,7 +40,12 @@
       <option name="presentableId" value="Default" />
       <updated>1665448987412</updated>
       <workItem from="1665448988634" duration="39000" />
+      <workItem from="1665578614672" duration="345000" />
+      <workItem from="1665604756337" duration="19000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

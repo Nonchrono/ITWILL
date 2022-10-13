@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../bbs/ssi.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -15,6 +16,7 @@
   <!-- 주의사항 : CSS와 JS는 각 웹브라우저에서 쿠키 삭제하고 확인할 것 -->
   <!-- layout.css import -->
   <link rel="stylesheet" href="../css/layout.css">
+  <!-- <link rel="stylesheet" href="../css/animate.css"> -->
   <script src="../js/clock.js"></script>
   <script src="../js/myscript.js"></script>
 
