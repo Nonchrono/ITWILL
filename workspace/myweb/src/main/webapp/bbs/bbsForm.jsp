@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../bbs/ssi.jsp" %>
 <!-- 본문 시작 bbsForm.jsp -->
 <h3>* 글쓰기 *</h3>
 <p><a href="bbsList.jsp">글목록</a><p>
 
 <div class="container">
 	<form name="bbsfrm" id="bbsfrm" method="post" action="bbsIns.jsp" onsubmit="return bbsCheck()"> <!-- myscript.js에 함수 작성함 -->
+	<div style="text-align: right">
+		<label><input type="checkbox" name="secretp" value="1">&nbsp;비공개</label>&nbsp;&nbsp;
+	</div>
 	<table class="table">
 	<tr>
 	   <th class="success">작성자</th>

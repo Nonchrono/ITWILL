@@ -17,6 +17,7 @@ create table tb_bbs(
  ,indent   number(5)       default 0 -- 들여쓰기
  ,ansnum   number(5)       default 0 -- 답변 번호
  ,ip       varchar2(15)    not null  -- 사용자 요청 PC의 IP
+ ,secretp char(2)     not null -- 비밀글
  ,primary key(bbsno)                 --bbsno 기본키 
 );
 
@@ -79,6 +80,8 @@ where bbsno=?;
 
 select * from tb_bbs;
 
+select * from tb_bbs where secretp = 1;
+
 
 -------------------------------------------------------------------------------------
 
@@ -135,13 +138,78 @@ where wname like '%파스타%';
 
 답글표시
 
-SELECT COUNT(*)-1 from tb_bbs
-GROUP BY grpno
-HAVING grpno = ?;
+SELECT COUNT(*) from tb_bbs
+WHERE grpno = ? AND indent >= 1;
+
+
+////////////////////////////////////////////////////////////////////////
+
+set pagesize 100;
+--한줄 출력 글자갯수
+set linesize 100;
+--칼럼길이 10칸 임시 조정
+col wname for a10;
+
+[페이징]
+- rownum 줄번호 활용
+
+1)
+SELECT bbsno, subject, wname, readcnt, indent, regdt
+FROM tb_bbs
+ORDER BY grpno DESC, ansnum ASC;
   
+2) rownum 추가
+SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum
+FROM tb_bbs 
+ORDER BY grpno DESC, ansnum ASC;
   
+3) 1)의 SQL문을 셀프조인하고, rownum 추가
+SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum
+from (
+        SELECT bbsno, subject, wname, readcnt, indent, regdt
+        FROM tb_bbs 
+        ORDER BY grpno DESC, ansnum ASC
+        );
+        
+4) 줄번호 1~5 조회 (1페이지)
+SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum
+from (
+        SELECT bbsno, subject, wname, readcnt, indent, regdt
+        FROM tb_bbs 
+        ORDER BY grpno DESC, ansnum ASC
+        )
+WHERE rownum >= 1 AND rownum <= 5;
   
-  
-  
-  
-  
+5) 줄번호 6~10 조회 (2페이지) --> 조회 안 됨. 선택된 레코드가 없습니다
+SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum as rnum
+from (
+        SELECT bbsno, subject, wname, readcnt, indent, regdt
+        FROM tb_bbs 
+        ORDER BY grpno DESC, ansnum ASC
+        )
+WHERE rownum >= 6 AND rownum <= 10;
+
+6) 줄번호가 있는 3)의 테이블을 한번 더 셀프조인하고, rownum칼럼명을 r로 바꾼다
+SELECT *
+from (SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum as r
+         from (
+                    SELECT bbsno, subject, wname, readcnt, indent, regdt
+                    FROM tb_bbs 
+                    ORDER BY grpno DESC, ansnum ASC
+                )
+        )
+WHERE r >= 6 AND r <= 10;
+
+7) 페이징+검색
+    예) 제목에서 '파스타'가 있는 행을 검색해서 2페이지로 넘어갈 수도 있다.
+    
+SELECT *
+from (SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum as r
+         from (
+                    SELECT bbsno, subject, wname, readcnt, indent, regdt
+                    FROM tb_bbs 
+                    WHERE subject LIKE '%짱구%'
+                    ORDER BY grpno DESC, ansnum ASC
+                )
+        )
+WHERE r >= 6 AND r <= 10;

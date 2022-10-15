@@ -3,9 +3,45 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba54181-d524-40a7-8474-14edfbc9a612" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.67/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-9.0.67/conf/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/Servers/Tomcat v9.0 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/Servers/Tomcat v9.0 Server at localhost-config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.68/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-9.0.68/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/bbs/BbsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/bbs/BbsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/bbs/starforce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsDel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsDel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsDelProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsDelProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsIns.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsIns.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsRead.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsRead.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsReply.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsReply.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsReplyProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsReplyProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsUpdateProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsUpdateProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/ssi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/ssi.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsDel.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsDelProc.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsForm.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsIns.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsList.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsRead.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsReply.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsReplyProc.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsUpdate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/bbsUpdateProc.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbs/ssi.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsDel.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsDelProc.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsForm.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsIns.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsList.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsRead.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsReply.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsReplyProc.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsUpdate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/bbsUpdateProc.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs_v1/ssi.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/sql/bbs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/sql/bbs.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +50,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -25,12 +68,102 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path": "D:\\",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/projectPokemon"
+    "last_opened_file_path": "D:/lib/servlet-api.jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.applicationServers"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.67" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.67" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="17" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="6653c745-5c82-422c-811b-4833889cda19" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9821" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -42,10 +175,22 @@
       <workItem from="1665448988634" duration="39000" />
       <workItem from="1665578614672" duration="345000" />
       <workItem from="1665604756337" duration="19000" />
+      <workItem from="1665788756066" duration="2017000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

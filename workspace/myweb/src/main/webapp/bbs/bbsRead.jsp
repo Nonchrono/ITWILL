@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../bbs/ssi.jsp" %>
 
 <!-- 본문 시작 bbsRead.jsp -->
 <h3>* 게시판 상세보기 *</h3>
 <p>
 	<a href="bbsForm.jsp">[글쓰기]</a>
 	&nbsp;&nbsp;
-	<a href="bbsList.jsp">[글목록]</a>
+	<a href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">[글목록]</a> <!-- 글목록으로 이동 -->
 </p>
 <div class="container">
 <%
 	int bbsno = Integer.parseInt(request.getParameter("bbsno"));
+	int secretp = Integer.parseInt(request.getParameter("secretp").trim());
 	//한줄에 해당하는 온전한 정보를 담으려면 dto
 	// 여러줄은 List
 	dto = dao.read(bbsno);
@@ -29,10 +31,8 @@
 			<th class="success">내용</th>
 			<td style="text-align: Left">
 <%
-			// 특수문자로 치환하기
-			// 사용자가 입력한 엔터(\n)를 <br> 태그로 바꾸기
 			String content = Utility.convertChar(dto.getContent());
-			out.print(content);
+			out.print(content);			
 %>
 			</td>
 		</tr>
@@ -55,7 +55,7 @@
 		</table>
 		<br>
 		<input type="button" value="답변쓰기" class="btn btn-info" onclick="location.href='bbsReply.jsp?bbsno=<%=bbsno%>'">
-		<input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>'">
+		<input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>'">
 		<input type="button" value="삭제" class="btn btn-danger" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno%>'">
 <%
 	} // if end

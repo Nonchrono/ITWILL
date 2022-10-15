@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../bbs/ssi.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,7 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Home</a>
+      <a class="navbar-brand" href="<%=request.getContextPath()%>./index.jsp">Home</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">

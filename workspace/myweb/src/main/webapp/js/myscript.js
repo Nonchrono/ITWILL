@@ -48,7 +48,7 @@ function bbsCheck() {
 
  
  
- function pwCheck() {
+function pwCheck() {
 	let passwd= $('#passwd').val();
 	passwd = passwd.trim();
 	if (passwd.length < 2 || isNaN(passwd)) {
@@ -64,6 +64,18 @@ function bbsCheck() {
 		return false;
 	}
 } // pwCheck() end
+
+function pwCheck2() {
+	let passwd= $('#passwd').val();
+	passwd = passwd.trim();
+	if (passwd.length < 2 || isNaN(passwd)) {
+		alert("비밀번호 2글자 이상 입력해주세요");
+		$('#passwd').focus();
+	 	return false;
+	} // if end
+	
+	return true;
+} // pwCheck2() end
 
 
 function searchCheck() {

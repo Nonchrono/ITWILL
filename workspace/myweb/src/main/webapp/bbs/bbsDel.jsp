@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../bbs/ssi.jsp" %>
 <!-- 본문 시작 bbsDel.jsp -->
 <!-- 글번호(bbsno)와 비밀번호(passwd)가 일치하면 글 삭제 -->
 <h3>* 글삭제 *</h3>

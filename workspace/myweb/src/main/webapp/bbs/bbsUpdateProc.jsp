@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../bbs/ssi.jsp" %>
 <!-- 본문 시작 bbsUpdateProc.jsp -->
 <!-- 수정 요청한 정보를 가져와서 DB에 가서 행 수정하기 -->
 
@@ -30,7 +31,7 @@
 	} else {
 		out.println("<script>");
 		out.println("	alert('게시글이 수정되었습니다~');");
-		out.println("	location.href='bbsList.jsp'");
+		out.println("	location.href='bbsList.jsp?col="+col+"&word="+word+"';"); 
 		out.println("</script>");
 	} // if end
 %>	

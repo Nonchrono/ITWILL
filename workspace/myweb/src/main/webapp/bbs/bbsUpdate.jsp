@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../bbs/ssi.jsp" %>
 <!-- 본문 시작 bbsUpdate.jsp -->
 <!-- 글 번호가 일치하는 행을 가져와서 수정 폼에 출력하기 read(), bbsForm.jsp 참고-->
 <h3>* 게시판 수정 *</h3>
@@ -20,6 +21,8 @@
 %>
 	<form name="bbsfrm" id="bbsfrm" method="post" action="bbsUpdateProc.jsp" onsubmit="return bbsCheck()">
 	<input type="hidden" name="bbsno" value="<%=bbsno%>">
+	<input type="hidden" name="col" value="<%=col%>">
+	<input type="hidden" name="word" value="<%=word%>">
 	<table class="table">
 	<tr>
 	   <th class="success">작성자</th>

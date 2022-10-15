@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<%@ include file="../bbs/ssi.jsp" %>
 
 <!-- 본문시작 bbsList.jsp -->
 <div class="container">
@@ -18,7 +19,11 @@
     </thead>
     <tbody>
 <%
-    ArrayList<BbsDTO> list=dao.list();
+
+	// 한페이지당 출력할 행의 갯수
+	int recordPerPage = 10;
+
+    ArrayList<BbsDTO> list=dao.list3(col, word, nowPage, recordPerPage);  
     if(list == null) {
         out.println("<tr>");
         out.println("   <td colspan='4'>");
@@ -40,22 +45,41 @@
 			for (int n=1; n<=dto.getIndent(); n++) {
 				out.println("<img src='../images/reply.gif'>");
 			} // for end
-
-%> 
-			<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>"><%=dto.getSubject()%></a>
+			
+			int secretp = Integer.parseInt(dto.getSecretp().trim());
+			if (secretp != 1) {
+				%><a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>"><%
+			} else {
+				%><a href="bbsSecret.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>"><%
+			}
+			
+			// 비밀글이 아닐 경우 제목 표시
+			if (secretp != 1) {
+				%><%=dto.getSubject()%><%
+			} else {
+				%>[비밀글입니다]<%
+			}
+%>
+			</a>
 <% 
 
-			// 오늘 작성한 글제목 뒤에 new 이미지 출력
-			// 작성일 (regdt)에서 "년월일"만 자르기
-			String regdt = dto.getRegdt().substring(0,10);
-			if (regdt.equals(today)) { // 작성일과 오늘 날짜가 같다면
-				out.println("<img src='../images/new.gif'>");
-			} // if end
-			
-			// 조회수가 10 이상이면 hot 이미지 출력
-			if (dto.getReadcnt() >= 10) {
-				out.println("<img src='../images/hot.gif'>");
-			}
+		// 오늘 작성한 글제목 뒤에 new 이미지 출력
+		// 작성일 (regdt)에서 "년월일"만 자르기
+		String regdt = dto.getRegdt().substring(0,10);
+		if (regdt.equals(today)) { // 작성일과 오늘 날짜가 같다면
+			out.println("<img src='../images/new.gif'>");
+		} // if end
+		
+		// 조회수가 10 이상이면 hot 이미지 출력
+		if (dto.getReadcnt() >= 10) {
+			out.println("<img src='../images/hot.gif'>");
+		}
+		
+		// 비밀글 여부 출력
+		if (secretp == 1) { 
+			out.println("<img src='../images/lock.png'>");
+		}
+
 %>			
 		</td>
 		<td><%=dto.getReadcnt()%></td>
@@ -73,6 +97,16 @@
         out.println("		글 갯수:<strong> " + totalRecord + " </Strong>");
         out.println("	</td>");
         out.println("</tr>");
+        
+        
+        // 페이지 리스트
+        out.println("<tr>");
+        out.println("	<td colspan='4' style='text-align:center; height: 50px'>");
+        String paging = new Paging().paging3(totalRecord, nowPage, recordPerPage, col, word, "bbsList.jsp");
+        out.print(paging);
+        out.println("	</td>");
+        out.println("</tr>");
+        
     
 %>
 	<!-- 검색 시작 -->
