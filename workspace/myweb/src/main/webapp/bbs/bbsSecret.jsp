@@ -8,10 +8,10 @@
 <%
 	int bbsno = Integer.parseInt(request.getParameter("bbsno"));
 	int secretp = Integer.parseInt(request.getParameter("secretp").trim());
+	
 %>
 <div class="container">
-	<form method="post" action="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>"
-		onsubmit="return pwCheck2()"> <!-- myscript.js -->
+	<form method="post" action="bbsSecretProc.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>&secretp=<%=secretp%>" onsubmit="return pwCheck2()"> <!-- myscript.js -->
 	<input type="hidden" name="bbsno" value="<%=bbsno%>">
 	<input type="hidden" name="secretp" value="<%=secretp%>">
 		<table class="table">

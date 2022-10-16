@@ -167,6 +167,35 @@ public class BbsDAO { // 데이터베이스 관련 작업
 			
 	} // incrementCnt() end
 	
+	public Boolean secret(int bbsno, String passwd) {
+		Boolean result = false;
+		String dbpw = "";
+		try {
+			con = dbopen.getConnection();
+			
+			sql = new StringBuilder();
+			sql.append(" SELECT passwd FROM tb_bbs ");
+			sql.append(" WHERE bbsno=? ");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, bbsno);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dbpw = rs.getString("passwd");
+				if(dbpw.equals(passwd)) {
+					result = true;
+				} else {
+					result = false;
+				}
+			}
+			
+		} catch (Exception e) {
+			System.out.println("삭제 실패 : "+ e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		} // end
+		return result;
+	} // delete() end
 	
 	public int delete(BbsDTO dto) {
 		int cnt = 0;

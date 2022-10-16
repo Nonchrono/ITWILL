@@ -13,7 +13,6 @@
 <div class="container">
 <%
 	int bbsno = Integer.parseInt(request.getParameter("bbsno"));
-	int secretp = Integer.parseInt(request.getParameter("secretp").trim());
 	//한줄에 해당하는 온전한 정보를 담으려면 dto
 	// 여러줄은 List
 	dto = dao.read(bbsno);
@@ -55,7 +54,7 @@
 		</table>
 		<br>
 		<input type="button" value="답변쓰기" class="btn btn-info" onclick="location.href='bbsReply.jsp?bbsno=<%=bbsno%>'">
-		<input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>'">
+		<input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>&secretp=<%=dto.getSecretp()%>'">
 		<input type="button" value="삭제" class="btn btn-danger" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno%>'">
 <%
 	} // if end

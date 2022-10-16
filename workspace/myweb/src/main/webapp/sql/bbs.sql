@@ -65,7 +65,7 @@ order by grpno desc, ansnum asc;
 
 
 -- 상세보기
-select * from tb_bbs where bbsno=?
+select * from tb_bbs where bbsno=?;
 
 -- 행삭제
 delete  FROM tb_bbs where bbsno=? and passwd=?

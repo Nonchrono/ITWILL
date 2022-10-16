@@ -14,15 +14,32 @@
 <div class="container">
 <%
 	int bbsno = Integer.parseInt(request.getParameter("bbsno")); // 수정 글번호
+	int secretp = Integer.parseInt(request.getParameter("secretp").trim()); // 비밀글 여부
 	dto = dao.read(bbsno); // 글번호가 일치하는 행을 가져오기
 	if (dto == null) {
 		out.println("해당 글 없음");
 	} else {
 %>
 	<form name="bbsfrm" id="bbsfrm" method="post" action="bbsUpdateProc.jsp" onsubmit="return bbsCheck()">
+	
+	<!-- 히든 속성 -->
 	<input type="hidden" name="bbsno" value="<%=bbsno%>">
 	<input type="hidden" name="col" value="<%=col%>">
 	<input type="hidden" name="word" value="<%=word%>">
+	
+	<div style="text-align: right">
+<% 
+	if (secretp != 1) {
+%>
+		<label><input type="checkbox" name="secretp" value="1">&nbsp;비공개</label>&nbsp;&nbsp;
+<% 
+	} else {
+%>
+		<label><input type="checkbox" name="secretp" value="1" checked="checked">&nbsp;비공개</label>&nbsp;&nbsp;
+<%		
+	}
+%>
+	</div>
 	<table class="table">
 	<tr>
 	   <th class="success">작성자</th>

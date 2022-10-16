@@ -61,6 +61,7 @@ function pwCheck() {
 	if(confirm(message)) { // alert랑 다르게 확인이랑 취소 다 나온다
 		return true; // 서버로 전송
 	} else {
+		$('#passwd').val().empty();
 		return false;
 	}
 } // pwCheck() end
