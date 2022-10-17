@@ -291,8 +291,8 @@ public class BbsDAO { // 데이터베이스 관련 작업
 			
 			// 3) 답변글 추가하기 (insert문)
 			sql.delete(0, sql.length());
-			sql.append(" INSERT INTO tb_bbs(bbsno, wname, subject, content, passwd, ip, grpno, indent, ansnum) ");
-			sql.append(" VALUES(bbs_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?) ");
+			sql.append(" INSERT INTO tb_bbs(bbsno, wname, subject, content, passwd, ip, grpno, indent, ansnum, secretp) ");
+			sql.append(" VALUES(bbs_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 			
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, dto.getWname());
@@ -303,6 +303,7 @@ public class BbsDAO { // 데이터베이스 관련 작업
 			pstmt.setInt(6, grpno);  // 1)단계에서 만든 그룹번호
 			pstmt.setInt(7, indent); // 1)단계에서 만든 들여쓰기
 			pstmt.setInt(8, ansnum); // 1)단계에서 만든 글순서
+			pstmt.setString(9, dto.getSecretp());
 			
 			cnt = pstmt.executeUpdate();
 			

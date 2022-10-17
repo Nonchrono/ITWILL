@@ -11,6 +11,7 @@
 	String content = request.getParameter("content").trim();
 	String passwd = request.getParameter("passwd").trim();
 	String ip = request.getRemoteAddr(); // 요청 PC의 IP
+	String secretp = request.getParameter("secretp").trim();
 	
 	// 전달값을 모두 dto 객체에 담기
 	dto.setBbsno(bbsno);
@@ -19,6 +20,7 @@
 	dto.setContent(content);
 	dto.setPasswd(passwd);
 	dto.setIp(ip);
+	dto.setSecretp(secretp); 
 	
 	int cnt = dao.reply(dto); 
 	 

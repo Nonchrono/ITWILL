@@ -7,6 +7,7 @@
 <p><a href="bbsList.jsp">[글 목록]</a></p>
 <form name="bbsfrm" id="bbsfrm" method="post" action="bbsReplyProc.jsp" onsubmit="return bbsCheck()"><!-- myscript.js -->
 	<input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno")%>">
+	<input type="hidden" name="secretp" value="<%=request.getParameter("secretp")%>">
 	
 	<div class="container">
 	<table class="table">
