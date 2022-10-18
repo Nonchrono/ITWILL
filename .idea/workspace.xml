@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba54181-d524-40a7-8474-14edfbc9a612" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/member/MemberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/member/MemberDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsRead.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/bbs/bbsRead.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/loginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/loginProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/loginProc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/sql/member.sql" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/sql/member.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +141,7 @@
       <workItem from="1665927127719" duration="29000" />
       <workItem from="1665993792695" duration="1533000" />
       <workItem from="1666055053896" duration="4686000" />
-      <workItem from="1666076053709" duration="623000" />
+      <workItem from="1666076053709" duration="709000" />
     </task>
     <servers />
   </component>

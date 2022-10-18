@@ -138,14 +138,35 @@ function emailCheck() { // 아이디 중복 확인
 
 function memberCheck() {
 	//1)아이디 5~10글자 인지?
+	if ($('#id').val() <= 5 || $('#id').val() >= 10) {
+		return false;
+	}
 	
     //2)비밀번호 5~10글자 인지?
+	if ($('#passwd').val() <= 5 || $('#passwd').val() >= 10) {
+		return false;
+	}
 	
     //3)비밀번호와 비밀번호확인이 서로 일치하는지?
+	if ($('#passwd').val() != $('#repasswd').val()) {
+		return false;
+	}
+
 
     //4)이름 2글자 이상 인지?
+    if ($('#mname').val() < 2) {
+		return false;
+	}
 
     //5)이메일 5글자 인지?
+    if ($('#email').val() < 5) {
+		return false;
+	}
 
     //6)직업을 선택했는지?
+    if ($('#email').val() == null) {
+		return false;
+	}
+
+	return true;
 }
