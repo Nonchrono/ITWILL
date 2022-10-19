@@ -132,39 +132,51 @@ function idCheck() { // 아이디 중복 확인
 	window.open("idCheckForm.jsp", "idwin", "width=400, height=350");
 } // idCheck() end
 
-function emailCheck() { // 아이디 중복 확인
+function emailCheck() { // 이메일 중복 확인
 	window.open("emailCheckForm.jsp", "emailwin", "width=400, height=350");
 } // emailCheck() end
 
 function memberCheck() {
 	//1)아이디 5~10글자 인지?
-	if ($('#id').val() <= 5 || $('#id').val() >= 10) {
+	if ($('#id').val().length <= 5 || $('#id').val().length >= 10) {
+		alert("아이디를 5~10글자 사이로 입력해주세요");
+		$('#id').focus();
 		return false;
 	}
 	
     //2)비밀번호 5~10글자 인지?
-	if ($('#passwd').val() <= 5 || $('#passwd').val() >= 10) {
+	if ($('#passwd').val().length <= 5 || $('#passwd').val().length >= 10) {
+		alert("비밀번호를 5~10글자 사이로 입력해주세요");
+		$('#passwd').focus();
 		return false;
 	}
 	
     //3)비밀번호와 비밀번호확인이 서로 일치하는지?
 	if ($('#passwd').val() != $('#repasswd').val()) {
+		alert("비밀번호와 비밀번호 확인 란에 입력된 내용이 서로 다릅니다");
+		$('#passwd').focus();
 		return false;
 	}
 
 
     //4)이름 2글자 이상 인지?
-    if ($('#mname').val() < 2) {
+    if ($('#mname').val().length < 2) {
+		alert("이름을 2글자 이상으로 적어주세요");
+		$('#mname').focus();
 		return false;
 	}
 
     //5)이메일 5글자 인지?
-    if ($('#email').val() < 5) {
+    if ($('#email').val().length < 5) {
+		alert("이메일을 5글자 이상으로 적어주세요");
+		$('#email').focus();
 		return false;
 	}
 
     //6)직업을 선택했는지?
-    if ($('#email').val() == null) {
+    if ($('#job').val() == '0') {
+		alert("직업을 선택해주세요");
+		$('#job').focus();
 		return false;
 	}
 

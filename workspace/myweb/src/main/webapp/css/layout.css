@@ -4,11 +4,13 @@
   font-family: 'Rix짱구-M';
   src: url('Rix짱구-M.woff') format('woff');
 }
-
+input.password {
+	color: #000000;
+}
 body {
   font: 20px 'Rix짱구-M', sans-serif;
   line-height: 1.8;
-  color: black;
+  color: #000000;
   font-family: 'Rix짱구-M';
 }
 p {font-size: 16px;}

@@ -208,7 +208,7 @@
 
 <script>
 	function send() {
-		if($("#agree").is(":checked") == true)			
+		if($("#agree").is(":checked") == true) 			
 			return true;
 		} else {
 			alert("약관에 동의한 후 회원가입이 가능합니다");

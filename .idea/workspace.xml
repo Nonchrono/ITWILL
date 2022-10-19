@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba54181-d524-40a7-8474-14edfbc9a612" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/member/MemberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/member/MemberDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/member/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/java/net/member/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/css/layout.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/js/myscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/agreement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/agreement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/emailCheckForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/emailCheckForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/emailCheckProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/emailCheckProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/idCheckProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/idCheckProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/memberForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/memberForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/memberProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/myweb/src/main/webapp/member/memberProc.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +151,7 @@
       <workItem from="1665993792695" duration="1533000" />
       <workItem from="1666055053896" duration="4686000" />
       <workItem from="1666076053709" duration="709000" />
+      <workItem from="1666140680644" duration="3886000" />
     </task>
     <servers />
   </component>

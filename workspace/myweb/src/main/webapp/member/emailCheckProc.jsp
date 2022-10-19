@@ -23,7 +23,7 @@
 		<a href="javascript:apply('<%=email%>')">[적용]</a>
 		<script>
 			function apply(email) {
-				alert(email);
+				// alert(email);
 				opener.document.memfrm.email.value = email;
 				window.close();
 			} // apply() end

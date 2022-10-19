@@ -9,6 +9,7 @@ public class MemberDTO { // 전송객체 Value Object
 	private String zipcode;
 	private String address1;
 	private String address2;
+	private String job;
 	private String mlevel;
 	private String mdate;
 	
@@ -79,6 +80,14 @@ public class MemberDTO { // 전송객체 Value Object
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
+	
+	public String getJob() {
+		return job;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
 
 	public String getMlevel() {
 		return mlevel;
@@ -99,8 +108,10 @@ public class MemberDTO { // 전송객체 Value Object
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", passwd=" + passwd + ", mname=" + mname + ", tel=" + tel + ", email=" + email
-				+ ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", mlevel=" + mlevel
-				+ ", mdate=" + mdate + "]";
+				+ ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", job=" + job
+				+ ", mlevel=" + mlevel + ", mdate=" + mdate + "]";
 	}
+
+	
 	
 } // class end

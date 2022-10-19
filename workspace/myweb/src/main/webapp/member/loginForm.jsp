@@ -40,7 +40,7 @@
 			  &nbsp;&nbsp;&nbsp; 
 			  <a href="agreement.jsp">회원가입</a>
 			  &nbsp;&nbsp;&nbsp;
-			  <a href="findID.jsp">아이디/비밀번호찾기</a>
+			  <a href="findIDPW.jsp">아이디/비밀번호찾기</a>
 		   </td>
 		</tr>
 		</table>

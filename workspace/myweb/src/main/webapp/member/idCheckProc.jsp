@@ -23,7 +23,7 @@
 		<a href="javascript:apply('<%=id%>')">[적용]</a>
 		<script>
 			function apply(id) {
-				alert(id);
+				// alert(id);
 				opener.document.memfrm.id.value = id;
 				window.close();
 			} // apply() end

@@ -5,7 +5,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>idCheckForm.jsp</title>
+<title>emailCheckForm.jsp</title>
 
 </head>
 <body>
@@ -21,8 +21,9 @@
 		function blankCheck2() {
 			let email = $("#email").val();
 			let exptext = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			
 			email = email.trim();
-			if (exptext.text(email) == false) {
+			if (!exptext.text(email)) {
 				alert("이메일 형식이 올바르지 않습니다");
 				return false;
 			}
