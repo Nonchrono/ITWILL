@@ -206,7 +206,7 @@
 </div>
 </form>
 
-<script>
+<!-- <script>
 	function send() {
 		if($("#agree").is(":checked") == true) 			
 			return true;
@@ -215,6 +215,17 @@
 			return false;
 		} // if end
 	} // send() end
+</script> -->
+
+<script>
+   function send(){
+      if(document.getElementById("agree").checked == true){
+         return true;
+      }else{
+         alert("약관에 동의한 후 회원가입이 가능합니다.");
+         return false;
+      }//if end
+   }//send() end
 </script>
 <!-- 본문 끝 -->
 <%@ include file="../footer.jsp"%>			

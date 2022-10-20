@@ -5,7 +5,7 @@
   src: url('Rix짱구-M.woff') format('woff');
 }
 input.password {
-	color: #000000;
+	color: #000000 !important;
 }
 body {
   font: 20px 'Rix짱구-M', sans-serif;

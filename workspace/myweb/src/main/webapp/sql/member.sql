@@ -67,3 +67,17 @@ where id = ?;
 -- 회원가입
 insert into member (id, passwd, mname, tel, email, zipcode, address1, address2, job, mlevel, mdate)
 values(?,?,?,?,?,?,?,?,?,'D1', sysdate)
+
+
+-- 아이디/비번 찾기
+-- 1) 이름과 이메일 일치하면
+select id
+from member
+where mname = ? and email =?
+
+-- 2) 임시 비밀번호를 발급해서 테이블 수정하기
+update member
+set passwd = ?
+where mname = ? and email = ?
+
+
