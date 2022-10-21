@@ -181,4 +181,48 @@ function memberCheck() {
 	}
 
 	return true;
-}
+} // memberCheck() end
+
+function pdsCheck() { // 포토갤러리 유효성 검사
+	// 1) 이름
+	let wname = $("#wname").val();
+	if (wname.length > 10) {
+		alert("이름은 10 글자 이내로 작성해주세요");
+		return false;
+	} // if end
+
+	// 2) 제목
+	let subject = $("#subject").val();
+	if (subject.length <= 1) {
+		alert("제목은 1글자 이상 작성해주세요");
+		return false;
+	} // if end
+	
+	// 3) 비밀번호
+	if ($('#passwd').val().length < 5 || $('#passwd').val().length > 10) {
+		alert("비밀번호를 5~10글자 사이로 입력해주세요");
+		$('#passwd').focus();
+		return false;
+	} // if end
+	
+	// 4) 첨부파일
+	// -> 파일의 확장명이 이미지 파일(png, jpg, gif)인지 확인하시오!
+	// let filename = document.getElementById("filename").value; // 예) sky.png
+	let filename = $("#filename").val();
+	filename = filename.trim();
+	if(filename.length == 0) {
+		alert("첨부파일 선택하세요~");
+		return false;
+	} else {
+		let dot = filename.lastIndexOf("."); // filename 변수값에서 마지막 .의 순서값
+		let ext = filename.substr(dot+1); // 확장명 : 마지막 . 이후 문자열 자르기
+		ext = ext.toLowerCase(); // 확장명을 전부 소문자 치환
+		if (ext == "png" || ext == "jpg" || ext == "gif") {
+			return true;
+		} else {
+			alert("이미지 파일만 업로드 가능합니다!");
+			return false;
+		} // if end
+	} // if end
+} // pdsCheck() end
+

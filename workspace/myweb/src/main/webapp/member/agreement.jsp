@@ -219,9 +219,10 @@
 
 <script>
    function send(){
-      if(document.getElementById("agree").checked == true){
+      // if(document.getElementById("agree").checked == true){
+   	  if($("#agree").is(":checked") == true){
          return true;
-      }else{
+      } else {
          alert("약관에 동의한 후 회원가입이 가능합니다.");
          return false;
       }//if end

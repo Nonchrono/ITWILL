@@ -21,6 +21,7 @@
 		out.println("해당 글 없음!!");
 	} else {
 		dao.incrementCnt(bbsno); // 조회수 증가
+		
 %>	
 		<table class="table">
 		<tr>
