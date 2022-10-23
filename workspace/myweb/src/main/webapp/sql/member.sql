@@ -80,4 +80,19 @@ update member
 set passwd = ?
 where mname = ? and email = ?
 
+-- 회원 탈퇴
+UPDATE member set mlevel = 'F1'
+WHERE id = ?
+;
 
+DELETE FROM member
+WHERE id = 'b1uelic';
+
+-- 관리자 등급
+UPDATE member set mlevel = 'A1'
+WHERE id = Nonchrono;
+
+-- 회원 정보 수정
+UPDATE member
+set passwd=?, mname=?, tel=?, email=?, zipcode=?, address1=?, address2=?
+WHERE id = ?

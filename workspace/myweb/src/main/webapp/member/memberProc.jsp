@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="auth.jsp" %>
+<%@ include file="../header.jsp" %>
 <%@ include file="../member/ssi.jsp" %>
 <%
 	// 사용자가 입력 요청한 정보를 가져오기
@@ -37,3 +39,5 @@
 	} // if end
 
 %>
+<!-- 본문 끝 -->
+<%@ include file="../footer.jsp" %>

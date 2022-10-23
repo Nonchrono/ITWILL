@@ -22,6 +22,7 @@ function bbsCheck() {
 	}
 	
 	// 3) 내용 (2글자 이상 입력)
+	/*
 	let content= $('#content').val(); // 내용 가져오기
 	content = content.trim();
 	if (content.length < 2) {
@@ -29,6 +30,7 @@ function bbsCheck() {
 		$('#content').focus(); // 내용 칸에 커서 생성
 		return false; // 전송하지 않음
 	}
+	*/
 	
 	// 4) 비밀번호 (4글자 이상이면서 숫자형 기호만 입력)
 	let passwd= $('#passwd').val();

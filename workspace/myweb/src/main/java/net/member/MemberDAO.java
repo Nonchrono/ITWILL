@@ -344,4 +344,53 @@ public class MemberDAO { // Data Access Object
         return sb.toString();
     } // getRamdomPassword() end
     
+	public int delete(MemberDTO dto) {
+		int cnt = 0;
+		
+		try {
+			con = dbopen.getConnection();
+			
+			sql = new StringBuilder();
+			sql.append(" UPDATE member set mlevel = 'F1' ");
+			sql.append(" WHERE id = ? AND passwd = ? ");
+			 
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getId());
+			pstmt.setString(2, dto.getPasswd());
+			cnt = pstmt.executeUpdate();	// 실행했을 때 행의 갯수가 반환
+			
+		} catch (Exception e) {
+			System.out.println("삭제 실패 : "+ e);
+		} finally {
+			DBClose.close(con, pstmt);
+		} // end
+		
+		return cnt;
+	} // delete() end
+	
+	public int modify(MemberDTO dto) {
+		int cnt = 0;
+		
+		try {
+			con = dbopen.getConnection();
+			
+			sql = new StringBuilder();
+			sql.append(" update member set passwd = ? ");
+			sql.append(" where mname = ? and id = ? and email = ? ");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, getRamdomPassword(10));
+			pstmt.setString(2, dto.getMname());
+			pstmt.setString(3, dto.getId());
+			pstmt.setString(4, dto.getEmail());
+			cnt = pstmt.executeUpdate();
+		
+		} catch (Exception e) {
+			System.out.println("비밀번호 조회 실패 : "+ e);
+		} finally {
+			DBClose.close(con, pstmt);
+		} // end
+		
+		return cnt;
+	} // modify() end
 }

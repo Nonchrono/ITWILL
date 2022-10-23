@@ -246,6 +246,8 @@ Community 서비스약관 (2005. 7. 18 부터 유효)
 			        		$("#agree").change(function() {
 			        			if ( $("#agree").prop('checked')) {
 				        	        $("#signup2").attr("disabled", false);
+			        			} else {
+			        				$("#signup2").attr("disabled", true);     				
 			        			} // if end
 			        		}); // end
 			        	}); // end

@@ -1,14 +1,14 @@
 @charset "UTF-8";
 /* layout.css */
 @font-face {
-  font-family: 'Rix짱구-M';
-  src: url('Rix짱구-M.woff') format('woff');
+  font-family: 'LotteDream';
+  src: url('LotteDreamBold.ttf') format('truetype');
 }
 input.password {
 	color: #000000 !important;
 }
 body {
-  font: 20px 'Rix짱구-M', sans-serif;
+  font: 20px 'LotteDream', sans-serif;
   line-height: 1.8;
   color: #000000;
   font-family: 'Rix짱구-M';
