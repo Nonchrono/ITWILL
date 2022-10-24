@@ -28,7 +28,7 @@
 	dto.setAddress2(address2);
 	dto.setJob(job);
 	
-	int cnt = dao.modify(dto);
+	int cnt = dao.modify(dto); 
 	
 	if (cnt == 0) {
 		out.println("<p>회원 수정이 실패했습니다!!</p>");

@@ -228,3 +228,20 @@ function pdsCheck() { // 포토갤러리 유효성 검사
 	} // if end
 } // pdsCheck() end
 
+
+function pwCheck3() {
+	let passwd= document.getElementById("passwd").value;
+	passwd = passwd.trim();
+	if (!(passwd.length > 4 && passwd.length <= 15)) {
+		alert("비밀번호 4글자 이상 15글자 이하로 입력해주세요");
+		document.getElementById("passwd").focus();
+	 	return false;
+	} // if end
+	
+	let message = "첨부파일도 삭제됩니다\n계속 진행할까요?";
+	if(confirm(message)) {
+		return true;
+	} else {
+		return false;
+	} // if end
+} // pwCheck3() end

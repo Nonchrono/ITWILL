@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import net.bbs.BbsDTO;
 import net.utility.DBClose;
 import net.utility.DBOpen;
+import net.utility.Utility;
 
 public class PdsDAO {
 
@@ -140,6 +141,71 @@ public class PdsDAO {
 		} // end
 		
 	} // incrementCnt() end
-
+	
+	
+	public int delete(int pdsno, String passwd, String saveDir) {
+		// saveDir : 스토리지의 물리적인 경로
+		int cnt = 0;
+		try {
+			// 테이블의 행을 삭제하기 전에 삭제하고자하는 파일명을 가져온다
+			// read()를 이용하면 filename을 가져올 수 있다
+			String filename = "";
+			PdsDTO oldDTO = read(pdsno);
+			if (oldDTO != null) {
+				filename = oldDTO.getFilename();
+			} // if end
+			
+			con = dbopen.getConnection();
+			sql = new StringBuilder();
+			sql.append(" DELETE FROM tb_pds ");
+			sql.append(" WHERE pdsno = ? AND passwd = ? ");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, pdsno);
+			pstmt.setString(2, passwd);
+			 
+			cnt = pstmt.executeUpdate();
+			
+			if(cnt == 1) { // 테이블에서 행삭제가 성공했으므로, 첨부했던 파일도 삭제
+				Utility.deleteFile(saveDir, filename);
+				// 리턴값이 boolean. 이용해도 되고 안 해도 되지만 이번엔 안 할 예정
+			} // if end
+			
+		} catch (Exception e) {
+			System.out.println("삭제 실패 : "+e);
+		} finally {
+			DBClose.close(con, pstmt);
+		} // end
+		
+		return cnt;
+	} // delete() end
+	
+	public int update(PdsDTO dto) {
+		int cnt = 0;
+		try {
+			con = dbopen.getConnection();
+			sql = new StringBuilder();
+			
+			sql.append(" UPDATE tb_pds ");
+			sql.append(" set wname=?, subject=?, passwd = ?, filename=?, filesize=? ");
+			sql.append(" WHERE pdsno = ? ");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getWname());
+			pstmt.setString(2, dto.getSubject());
+			pstmt.setString(3, dto.getPasswd());
+			pstmt.setString(4, dto.getFilename());
+			pstmt.setLong(5, dto.getFilesize());
+			pstmt.setInt(6, dto.getPdsno());
+			 
+			cnt = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("삭제 실패 : "+e);
+		} finally {
+			DBClose.close(con, pstmt);
+		} // end
+		
+		
+		return cnt;
+	} // update() end
 
 } // class end

@@ -1,8 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="auth.jsp" %>
+<%@ include file="ssi.jsp" %>
 <%@ include file="../header.jsp" %>
 <!-- 본문 시작 memberModifyProc.jsp -->
+
+<%
+	String password = request.getParameter("passwd");
+
+	dto = dao.read(s_id);
+
+	if (!(password.equals(s_passwd))) {
+		out.println("<script>");
+		out.println("	location.href='memberModify.jsp'");
+		out.println("	alert('비밀번호가 일치하지 않습니다!!');");
+		out.println("</script>");
+	} else {
+%>
 
 <form name="memmdf" id="memmdf" action="memberModifyProc2.jsp" onsubmit="return memberCheck()"><!-- myscript.js -->
 <span style="color:red; font-weight: bold">* 필수입력</span>
@@ -11,7 +25,7 @@
 <tr>
     <th>*아이디</th>
     <td style="text-align: left">
-      <input type="text" name="id" id="id" value="<%=s_id%>" size="15" onclick="idCheck()" disabled>
+    	<input type="text" name="id" id="id" value="<%=s_id%>" size="15" onclick="idCheck()" disabled>
     </td>
 </tr>
 <tr>
@@ -24,23 +38,23 @@
 </tr>
 <tr>
     <th>*이름</th>
-    <td style="text-align: left"><input type="text" name="mname" id="mname" size="15" maxlength="20" required></td>
+    <td style="text-align: left"><input type="text" name="mname" id="mname" value="<%=dto.getMname()%>" size="15" maxlength="20" required></td>
 </tr>
 <tr>
     <th>*이메일</th>
     <td style="text-align: left">
-      <input type="email" name="email" id="email" size="30" readonly onclick="emailCheck()">
+      <input type="email" name="email" id="email" size="30" value="<%=dto.getEmail()%>" readonly onclick="emailCheck()">
       <input type="button" value="Email 중복확인" onclick="emailCheck()">
     </td>
 </tr>
 <tr>
     <th>전화번호</th>
-    <td style="text-align: left"><input type="text" name="tel" id="tel" size="15"></td>
+    <td style="text-align: left"><input type="text" name="tel" id="tel" size="15" value="<%=dto.getTel()%>"></td>
 </tr>
 <tr>
     <th>우편번호</th>
     <td style="text-align: left">
-      <input type="text" name="zipcode" id="zipcode" size="7"  readonly>
+      <input type="text" name="zipcode" id="zipcode" size="7" value="<%=dto.getZipcode()%>" readonly>
       <input type="button" value="주소찾기" onclick="DaumPostcode()">    
     </td>
 </tr>
@@ -67,7 +81,7 @@
 </tr>
 <tr>
     <td colspan="2">
-        <input type="submit" value="회원가입"  class="btn btn-primary"/>
+        <input type="submit" value="회원정보 수정"  class="btn btn-primary"/>
         <input type="reset"  value="취소"      class="btn btn-primary"/>
     </td>
 </tr>
@@ -142,6 +156,10 @@
 <!-- ----- DAUM 우편번호 API 종료----- -->
 
 </form>
+
+<%
+	}
+%>
 
 
 <!-- 본문 끝 -->

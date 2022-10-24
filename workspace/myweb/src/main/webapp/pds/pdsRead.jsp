@@ -42,6 +42,9 @@
 		<td><%=dto.getReadcnt()%></td>
 	</tr> 
 	</table>
+	<br>
+	<input type="button" value="수정" onclick="location.href='pdsUpdate.jsp?pdsno=<%=pdsno%>&filename=<%=dto.getFilename()%>'">
+	<input type="button" value="삭제" onclick="location.href='pdsDel.jsp?pdsno=<%=pdsno%>'">
 	
 <%
 	} // if end

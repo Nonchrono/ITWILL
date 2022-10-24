@@ -14,6 +14,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import net.bbs.BbsDTO;
 import net.utility.*;
 
 public class MemberDAO { // Data Access Object
@@ -375,14 +376,20 @@ public class MemberDAO { // Data Access Object
 			con = dbopen.getConnection();
 			
 			sql = new StringBuilder();
-			sql.append(" update member set passwd = ? ");
-			sql.append(" where mname = ? and id = ? and email = ? ");
+			sql.append(" update member ");
+			sql.append(" set passwd=?, mname=?, tel=?, email=?, zipcode=?, address1=?, address2=? ");
+			sql.append(" WHERE id = ? ");
 			
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, getRamdomPassword(10));
 			pstmt.setString(2, dto.getMname());
-			pstmt.setString(3, dto.getId());
+			pstmt.setString(3, dto.getTel());
 			pstmt.setString(4, dto.getEmail());
+			pstmt.setString(5, dto.getZipcode());
+			pstmt.setString(6, dto.getAddress1());
+			pstmt.setString(7, dto.getAddress2());
+			pstmt.setString(8, dto.getId());
+			
 			cnt = pstmt.executeUpdate();
 		
 		} catch (Exception e) {
@@ -393,4 +400,43 @@ public class MemberDAO { // Data Access Object
 		
 		return cnt;
 	} // modify() end
+	
+	public MemberDTO read(String s_id) {
+	MemberDTO dto = null;
+		
+	try {
+		con = dbopen.getConnection(); // db 연결
+		
+		sql = new StringBuilder();
+		sql.append(" select id, passwd, mname, tel, email, zipcode, address1, address2, job, mlevel, mdate ");
+		sql.append(" from member ");
+		sql.append(" where id = ? ");
+		
+		pstmt = con.prepareStatement(sql.toString());
+		pstmt.setString(1, s_id);
+		
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			dto = new MemberDTO();
+			dto.setId(rs.getString("id"));
+			dto.setPasswd(rs.getString("passwd"));
+			dto.setMname(rs.getString("mname"));
+			dto.setTel(rs.getString("tel"));
+			dto.setEmail(rs.getString("email"));
+			dto.setZipcode(rs.getString("zipcode"));
+			dto.setAddress1(rs.getString("address1"));
+			dto.setAddress2(rs.getString("address2"));
+			dto.setJob(rs.getString("job"));
+			dto.setMlevel(rs.getString("mlevel"));
+			dto.setMdate(rs.getString("mdate"));
+		} // end
+		
+		} catch (Exception e) {
+			System.out.println("회원정보 조회 실패 : "+e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		} // end
+	
+	return dto;
+	} // read() end
 }

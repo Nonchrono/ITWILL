@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="362b1519-54d1-4bca-bdc3-2b68dacc1476" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bbs/bbsRead.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bbs/bbsRead.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/myscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/myscript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/member/agreement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member/agreement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/member/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member/loginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/member/MemberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/member/MemberDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/pds/PdsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/pds/PdsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member/memberModifyProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member/memberModifyProc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member/memberModifyProc2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member/memberModifyProc2.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,7 @@
       <updated>1666270215787</updated>
       <workItem from="1666270216965" duration="421000" />
       <workItem from="1666318659750" duration="6154000" />
+      <workItem from="1666574117876" duration="44000" />
     </task>
     <servers />
   </component>

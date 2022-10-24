@@ -58,6 +58,8 @@ select mlevel
 from member
 where id='user1' and passwd='12341234' and mlevel in ('A1', 'B1', 'C1', 'D1');
 
+select id, passwd, mname, tel, email, zipcode, address1, address2, job, mlevel, mdate
+from member;
 
 -- 아이디 중복확인
 select count(id)
@@ -82,7 +84,7 @@ where mname = ? and email = ?
 
 -- 회원 탈퇴
 UPDATE member set mlevel = 'F1'
-WHERE id = ?
+WHERE id = ? and passwd = ?
 ;
 
 DELETE FROM member
@@ -93,6 +95,15 @@ UPDATE member set mlevel = 'A1'
 WHERE id = Nonchrono;
 
 -- 회원 정보 수정
+-- 1) 수정하고자하는 행을 가져오기 -> read() 함수
+select mname, tel, email, zipcode, address1, address2, job
+from member
+where id = ?
+
+-- 2) 새로 입력한 값으로 행 수정하기 -> modifyProc() 함수
+-- (id는 수정불가, mlevel은 사이트 운영자가 수정, mdate는 수정안함)
 UPDATE member
-set passwd=?, mname=?, tel=?, email=?, zipcode=?, address1=?, address2=?
+set passwd=?, mname=?, tel=?, email=?, zipcode=?, address1=?, address2=?, job = ?
 WHERE id = ?
+
+-- 회원 정보 수정
