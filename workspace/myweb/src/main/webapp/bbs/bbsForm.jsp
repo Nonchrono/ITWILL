@@ -15,8 +15,8 @@
 	<table class="table">
 	<tr>
 	   <th class="success">작성자</th>
-	   <!-- <td><input type="text" name="wname" id="wname" class="form-control" maxlength="20" required></td> -->
-	   <td><input type="text" name="wname" id="wname" value="관리자" class="form-control" maxlength="20" readonly></td>
+	   <td><input type="text" name="wname" id="wname" class="form-control" maxlength="20" required></td>
+	   <!-- <td><input type="text" name="wname" id="wname" value="관리자" class="form-control" maxlength="20" readonly></td> -->
 	</tr>
 	<tr>
 	   <th class="success">제목</th>

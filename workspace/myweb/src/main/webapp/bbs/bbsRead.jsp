@@ -25,11 +25,11 @@
 %>	
 		<table class="table">
 		<tr>
-			<th class="success">제목</th>
+			<th class="success" scope="col">제목</th>
 			<td><%=dto.getSubject()%></td>
 		</tr>
 		<tr>
-			<th class="success">내용</th>
+			<th class="success" scope="col">내용</th>
 			<td style="text-align: Left">
 <%
 			String content = Utility.convertChar(dto.getContent());
@@ -38,19 +38,19 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="success">조회수</th>
+			<th class="success" scope="col">조회수</th>
 			<td><%=dto.getReadcnt()%></td>
 		</tr>
 		<tr>
-			<th class="success">작성자</th>
+			<th class="success" scope="col">작성자</th>
 			<td><%=dto.getWname()%></td>
 		</tr> 
 		<tr>
-			<th class="success">작성일</th>
+			<th class="success" scope="col">작성일</th>
 			<td><%=dto.getRegdt()%></td>
 		</tr>
 		<tr>
-			<th class="success">IP</th>
+			<th class="success" scope="col">IP</th>
 			<td><%=dto.getIp()%></td>
 		</tr>
 		</table>

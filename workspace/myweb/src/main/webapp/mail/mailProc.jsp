@@ -56,7 +56,7 @@
 		
 		// 이미지 출력하기
 		content += "<hr>";
-		content += "<img src='http://localhost:9090/myweb/images/shinback.png'>"; 
+		content += "<img src='/src/main/webapp/images/shinback.png'>"; 
 		
 		// 받는 사람 이메일 주소
 		InternetAddress[] address = { new InternetAddress(to) };

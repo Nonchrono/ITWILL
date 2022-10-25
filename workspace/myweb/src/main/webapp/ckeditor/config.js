@@ -41,6 +41,4 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserUploadUrl = "../ckfinder/core/connector/java/connctor.java?command=QuickUpload&type=Files";
 	config.filebrowserImageUploadUrl = "../ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images";
 	config.filebrowserFlashUploadUrl = "../ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash";
-
-	config.fullPage = false;   //true이면 html태그 까지 보임 false이면 에디터 부분 태그만 보임(html로 보기 시에)
 };

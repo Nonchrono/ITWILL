@@ -11,10 +11,10 @@
     <table class="table table-hover table-condensed">
     <thead>
         <tr class="success">
-            <th>제목</th>
-            <th>조회수</th>
-            <th>작성자</th>
-            <th>작성일</th>
+            <th scope="row">제목</th>
+            <th scope="row">조회수</th>
+            <th scope="row">작성자</th>
+            <th scope="row">작성일</th>
         </tr>
     </thead>
     <tbody>
