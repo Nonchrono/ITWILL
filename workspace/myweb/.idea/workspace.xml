@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="362b1519-54d1-4bca-bdc3-2b68dacc1476" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/activation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cafe24/src/main/java/net/bbs/BbsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cafe24/src/main/java/net/bbs/BbsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cafe24/src/main/webapp/bbs/bbsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../cafe24/src/main/webapp/bbs/bbsList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cafe24/src/main/webapp/pds/pdsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../cafe24/src/main/webapp/pds/pdsList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bbs/bbsForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bbs/bbsForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bbs/bbsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bbs/bbsList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bbs/bbsRead.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bbs/bbsRead.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ckeditor/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ckeditor/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/mail/mailForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/mail/mailForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/mail/mailProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/mail/mailProc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/member/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member/loginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/member/memberModifyProc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member/memberModifyProc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/notice/noticelist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/notice/noticeList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myweb.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +36,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/catalina.out",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/Java202207/workspace/cafe24",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,11 +57,23 @@
       <workItem from="1666270216965" duration="421000" />
       <workItem from="1666318659750" duration="6154000" />
       <workItem from="1666574117876" duration="44000" />
-      <workItem from="1666680634019" duration="2940000" />
+      <workItem from="1666680634019" duration="5534000" />
+      <workItem from="1666744426242" duration="2975000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

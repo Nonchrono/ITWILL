@@ -17,3 +17,16 @@ select * from notice;
 
 select noticeno, subject, content, regdt
 from notice;
+
+
+SELECT *
+FROM (
+       SELECT bbsno, subject, wname, readcnt, indent, regdt, (@rownum := @rownum + 1) as r 
+       FROM (
+             SELECT bbsno, subject, wname, readcnt, indent, regdt
+             FROM tb_bbs
+             ORDER BY grpno DESC, ansnum ASC
+             Limit 1231493857187846
+          ) AA CROSS JOIN (SELECT @rownum := 0) AS CC 
+       ) BB
+WHERE r >= 1 AND r <= 5;

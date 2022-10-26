@@ -12,14 +12,15 @@
 	} else {
 		out.println("전체 글 갯수 : "+ list.size());
 %>
+	<div class="container">
 		<table class="table table-hover">
 		<thead>
 			<tr class="success">
-				<th>제목</th>
-				<th>사진</th>
-				<th>조회수</th>
-				<th>작성자</th>
-				<th>작성일</th>
+				<th style="text-align: center;">제목</th>
+				<th style="text-align: center;">사진</th>
+				<th style="text-align: center;">조회수</th>
+				<th style="text-align: center;">작성자</th>
+				<th style="text-align: center;">작성일</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -28,16 +29,17 @@
 			dto = list.get(i);
 %>
 			<tr>
-				<td><a href="pdsRead.jsp?pdsno=<%=dto.getPdsno()%>"><%=dto.getSubject()%></td>
-				<td><img src="../storage/<%=dto.getFilename()%>" width="50"></td>
-				<td><%=dto.getReadcnt()%></td>
-				<td><%=dto.getWname()%></td>
-				<td><%=dto.getRegdate().substring(0, 10)%></td>
+				<td style="text-align: left;"><a href="pdsRead.jsp?pdsno=<%=dto.getPdsno()%>"><%=dto.getSubject()%></td>
+				<td style="text-align: center;"><img src="../storage/<%=dto.getFilename()%>" width="50"></td>
+				<td style="text-align: center;"><%=dto.getReadcnt()%></td>
+				<td style="text-align: center;"><%=dto.getWname()%></td>
+				<td style="text-align: center;"><%=dto.getRegdate().substring(0, 10)%></td>
 			</tr>
 <%
 		} // for end
 		out.println("	</tbody>");
 		out.println("</table>");
+		out.println("</div>");
 	} // if end
 %>
 

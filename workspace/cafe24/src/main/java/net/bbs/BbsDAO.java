@@ -395,23 +395,26 @@ public class BbsDAO {   //데이터베이스 관련 작업
          if(word.length() == 0) {   //검색하지 않는 경우 6)
 			sql.append(" SELECT * ");
 			sql.append(" FROM ( ");
-			sql.append("       SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum as r ");
+			sql.append("       SELECT bbsno, subject, wname, readcnt, indent, regdt, (@rownum := @rownum + 1) as r ");
 			sql.append("       FROM ( ");
 			sql.append("             SELECT bbsno, subject, wname, readcnt, indent, regdt ");
 			sql.append("             FROM tb_bbs ");
-			sql.append("             ORDER BY grpno DESC, ansnum ASC ");
-			sql.append("          ) ");
-			sql.append("       ) ");
+            sql.append("             ORDER BY grpno DESC, ansnum ASC ");
+            sql.append("             LIMIT 99999999999999999 ");
+			sql.append("          ) AA CROSS JOIN (SELECT @rownum := 0) AS CC ");
+			sql.append("       ) BB ");
 			sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
 
                         
          }else {                  //검색하는 경우 7)
 			sql.append(" SELECT * ");
 			sql.append(" FROM ( ");
-			sql.append("       SELECT bbsno, subject, wname, readcnt, indent, regdt, rownum as r ");
+			sql.append("       SELECT bbsno, subject, wname, readcnt, indent, regdt, (@rownum := @rownum + 1) as r ");
 			sql.append("       FROM ( ");
 			sql.append("             SELECT bbsno, subject, wname, readcnt, indent, regdt ");
 			sql.append("             FROM tb_bbs ");
+            sql.append("             ORDER BY grpno DESC, ansnum ASC ");
+            sql.append("             LIMIT 99999999999999999 ");
 			
 			String search = "";
 			if(col.equals("subject_content")) {
@@ -425,9 +428,8 @@ public class BbsDAO {   //데이터베이스 관련 작업
 				search += " WHERE wname LIKE '%" + word + "%' ";
 			}//if end
 			sql.append(search);
-            sql.append("             ORDER BY grpno DESC, ansnum ASC ");
-            sql.append("          ) ");
-            sql.append("       ) ");
+            sql.append("          ) AA CROSS JOIN (SELECT @rownum := 0) AS CC ");
+            sql.append("       ) BB ");
             sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
 
          }//if end      
