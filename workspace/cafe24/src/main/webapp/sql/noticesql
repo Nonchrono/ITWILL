@@ -1,11 +1,10 @@
 -- 1) 테이블 생성
 
 create table notice(
- noticeno   number           not null  -- 일련번호
-,subject    varchar2(255)    not null  -- 제목
-,content    varchar2(4000)   not null  -- 내용
-,regdt      date    default  sysdate   -- 작성일
-,primary key(noticeno)                 -- noticeno 기본키
+ noticeno   int           not null  primary key -- 일련번호
+,subject    varchar(255)    not null  -- 제목
+,content    varchar(4000)   not null  -- 내용
+,regdt      datetime    not null   -- 작성일
 );
 
 
@@ -19,14 +18,16 @@ select noticeno, subject, content, regdt
 from notice;
 
 
+----------------------------------------------------------------------------------
+
+
 SELECT *
 FROM (
-       SELECT bbsno, subject, wname, readcnt, indent, regdt, (@rownum := @rownum + 1) as r 
-       FROM (
-             SELECT bbsno, subject, wname, readcnt, indent, regdt
+      SELECT bbsno, subject, wname, readcnt, grpno, ansnum, indent, regdt, (@rownum := @rownum + 1) as r
+      FROM (
+             SELECT bbsno, subject, wname, readcnt, grpno, ansnum, indent, regdt
              FROM tb_bbs
-             ORDER BY grpno DESC, ansnum ASC
-             Limit 1231493857187846
-          ) AA CROSS JOIN (SELECT @rownum := 0) AS CC 
+          ) AA, (SELECT @rownum := 0) AS CC
+          ORDER BY grpno DESC, ansnum ASC
        ) BB
-WHERE r >= 1 AND r <= 5;
+WHERE r >= 1  AND r <= 10;
