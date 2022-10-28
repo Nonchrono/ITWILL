@@ -1,16 +1,15 @@
 -- 1) 테이블 생성
 
 create table notice(
- noticeno   int           not null  primary key -- 일련번호
+ noticeno   int           not null auto_increment primary key -- 일련번호
 ,subject    varchar(255)    not null  -- 제목
 ,content    varchar(4000)   not null  -- 내용
 ,regdt      datetime    not null   -- 작성일
 );
 
+drop table notice;
 
--- 2) 일련번호 시퀀스 생성
 
-create sequence noticeno_seq;
 
 select * from notice;
 
@@ -19,6 +18,9 @@ from notice;
 
 
 ----------------------------------------------------------------------------------
+
+INSERT INTO notice (subject, content, regdt)
+VALUES ('관리자', '첫 게시글', now());
 
 
 SELECT *

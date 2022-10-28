@@ -14,6 +14,7 @@ public class BbsDTO { // 전송객체
 	private int ansnum;
 	private String ip;
 	private String secretp;
+	private String writer;
 	
 	// 기본 생성자
 	public BbsDTO() {}
@@ -114,11 +115,19 @@ public class BbsDTO { // 전송객체
 		this.secretp = secretp;
 	}
 
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
 	@Override
 	public String toString() {
 		return "BbsDTO [bbsno=" + bbsno + ", wname=" + wname + ", subject=" + subject + ", content=" + content
 				+ ", passwd=" + passwd + ", readcnt=" + readcnt + ", regdt=" + regdt + ", grpno=" + grpno + ", indent="
-				+ indent + ", ansnum=" + ansnum + ", ip=" + ip + ", secretp=" + secretp + "]";
+				+ indent + ", ansnum=" + ansnum + ", ip=" + ip + ", secretp=" + secretp + ", writer=" + writer + "]";
 	}
 
 }

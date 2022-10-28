@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="ssi.jsp" %>
+<%@ include file="../member/auth.jsp" %>
 <%@ include file="../header.jsp"%>
 
 <!-- 본문시작 bbsList.jsp -->
@@ -45,21 +46,39 @@
 			out.println("<img src='../images/reply.gif'>");
 		} // for end
 		
-%> 
-		<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>"><%=dto.getSubject()%></a>
-<% 
+		// 비밀글 여부를 가져와서 비밀글과 아닌 경우 구분하기
+		int secretp = Integer.parseInt(dto.getSecretp().trim());
+		
+		if (dto.getWriter().equals(s_id) && secretp == 1) { // 비밀글 - 로그인 작성자 동일
+			%>
+			<%out.print("<img src='../images/lock.png'>");%>
+			<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>"><%=dto.getSubject()%></a>
+			<% 
+		} else if (dto.getWriter().equals(s_id) && secretp != 1) { // 비밀글x - 로그인 작성자 동일
+			%>
+			<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>"><%=dto.getSubject()%></a>
+			<%
+		} else if (!(dto.getWriter().equals(s_id)) && secretp == 1) { // 비밀글 - 로그인 작성자 다름
+			%>
+			<%out.print("<img src='../images/lock.png'>");%>
+			<a href="bbsSecret.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>">
+			[비밀글입니다]</a>
+			<%
+		} else { // 비밀글x - 로그인 작성자 다름
+			%><a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>"><%=dto.getSubject()%></a><%
+		}
 
-			// 오늘 작성한 글제목 뒤에 new 이미지 출력
-			// 작성일 (regdt)에서 "년월일"만 자르기
-			String regdt = dto.getRegdt().substring(0,10);
-			if (regdt.equals(today)) { // 작성일과 오늘 날짜가 같다면
-				out.println("<img src='../images/new.gif'>");
-			} // if end
-			
-			// 조회수가 10 이상이면 hot 이미지 출력
-			if (dto.getReadcnt() >= 10) {
-				out.println("<img src='../images/hot.gif'>");
-			}
+		// 오늘 작성한 글제목 뒤에 new 이미지 출력
+		// 작성일 (regdt)에서 "년월일"만 자르기
+		String regdt = dto.getRegdt().substring(0,10);
+		if (regdt.equals(today)) { // 작성일과 오늘 날짜가 같다면
+			out.println("<img src='../images/new.gif'>");
+		} // if end
+		
+		// 조회수가 10 이상이면 hot 이미지 출력
+		if (dto.getReadcnt() >= 10) {
+			out.println("<img src='../images/hot.gif'>");
+		}
 %>			
 		</td>
 		<td><%=dto.getReadcnt()%></td>
@@ -71,7 +90,7 @@
         
         
         // 글 갯수
-        int totalRecord = dao.count(); 
+        int totalRecord = dao.count2(col, word);
         out.println("<tr>");
         out.println("	<td colspan='4' style='text-align:center;'>");
         out.println("		글 갯수:<strong> " + totalRecord + " </Strong>");

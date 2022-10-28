@@ -32,19 +32,22 @@ function bbsCheck() {
 	}
 	*/
 	
-	// 4) 비밀번호 (4글자 이상이면서 숫자형 기호만 입력)
+	// 4) 비밀번호 (4글자 이상)
 	let passwd= $('#passwd').val();
 	passwd = passwd.trim();
-	if (passwd.length < 2) {
+	if (passwd.length < 4) {
 		alert("비밀번호 2글자 이상 입력해주세요");
 		$('#passwd').focus();
 		return false;
-	} else if (isNaN(passwd)) {
+	} 
+	/*
+		else if (isNaN(passwd)) {
 		alert("비밀번호에 숫자만 입력해주세요");
 		$('#passwd').focus();
 		return false;
 	}
-		
+	*/
+	
 	return true; // onsubmit 이벤트에서 서버로 전송
 } // bbsCheck() end
 

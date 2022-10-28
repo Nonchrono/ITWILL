@@ -5,11 +5,18 @@
 <!-- 본문 시작 bbsIns.jsp -->
 <% 
 	// 사용자가 입력 요청한 정보를 가져오기
-	String wname = request.getParameter("wname").trim();
+	String wname = request.getParameter("wname").trim(); // 비로그인시의 작성자
 	String subject = request.getParameter("subject").trim();
 	String content = request.getParameter("content").trim();
 	String passwd = request.getParameter("passwd").trim();
 	String ip = request.getRemoteAddr(); // 요청 pc의 IP
+	String secretp = request.getParameter("secretp"); // 비밀글 여부 // 비밀글 1, 공개글 0
+	String writer = request.getParameter("writer"); // 로그인시의 작성자
+	
+	// 비밀글 체크를 안 한 상태면 값을 0으로
+	if (secretp == null) {
+		secretp = "0";
+	}
 	
 	// 전달값을 모두 dto 객체에 담기
 	dto.setWname(wname);
@@ -17,7 +24,10 @@
 	dto.setContent(content);
 	dto.setPasswd(passwd);
 	dto.setIp(ip);
+	dto.setSecretp(secretp);
+	dto.setWriter(writer);
 	
+	// 글 작성 함수
 	int cnt = dao.create(dto);
 	
 	if (cnt == 0) {
