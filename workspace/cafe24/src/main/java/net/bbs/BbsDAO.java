@@ -200,16 +200,17 @@ public class BbsDAO {   //데이터베이스 관련 작업
          con = dbopen.getConnection();
          sql = new StringBuilder();
          sql.append(" UPDATE tb_bbs ");
-         sql.append(" SET wname=?, subject=?, content=?, ip=? ");
+         sql.append(" SET wname=?, subject=?, content=?, secretp=?, writer=? ");
          sql.append(" WHERE bbsno=? AND passwd=? ");
          
          pstmt = con.prepareStatement(sql.toString());
          pstmt.setString(1, dto.getWname());
          pstmt.setString(2, dto.getSubject());
          pstmt.setString(3, dto.getContent());
-         pstmt.setString(4, dto.getIp());
-         pstmt.setInt(5, dto.getBbsno());
-         pstmt.setString(6, dto.getPasswd());
+         pstmt.setString(4, dto.getSecretp());
+         pstmt.setString(5, dto.getWriter());
+         pstmt.setInt(6, dto.getBbsno());
+         pstmt.setString(7, dto.getPasswd());
          
          cnt = pstmt.executeUpdate();
          
@@ -239,19 +240,19 @@ public class BbsDAO {   //데이터베이스 관련 작업
          
          pstmt = con.prepareStatement(sql.toString());
          pstmt.setInt(1, dto.getBbsno());
-         rs = pstmt.executeQuery();
          
+         rs = pstmt.executeQuery();
          if(rs.next()) {
             //그룹번호 : 부모글 그룹번호 그대로 가져오기
             grpno = rs.getInt("grpno");
-            //들여쓰기 : 부모글 들여쓰기 + 1
+            //들여쓰기 : 부모글을 기준으로 자식글 들여쓰기 + 1
             indent = rs.getInt("indent")+1;
             //글순서   : 부모글 글순서 + 1
             ansnum = rs.getInt("ansnum")+1;
          }//if end
            
-         /*
-         2) 글순서 재조정(update문)
+
+         // 2) 글순서 재조정(update문)
          sql.delete(0, sql.length());   //1)단계에서 사용했던 sql값 지우기
          sql.append(" UPDATE tb_bbs ");
          sql.append(" SET ansnum = ansnum + 1 ");
@@ -261,14 +262,13 @@ public class BbsDAO {   //데이터베이스 관련 작업
          pstmt.setInt(1, grpno);
          pstmt.setInt(2, ansnum);
          pstmt.executeUpdate();         
-         */
-         
+
          //3) 답변글 추가하기(insert문)
          sql.delete(0, sql.length());
          //sql.append(" INSERT INTO tb_bbs(bbsno, wname, subject, content, passwd, ip, grpno, indent, ansnum) ");
          //sql.append(" VALUES(bbs_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?) ");
-         sql.append(" INSERT INTO tb_bbs(wname, subject, content, passwd, ip, grpno, indent, ansnum, regdt)");
-          sql.append(" VALUES(?,?,?,?,?,?,?,?,now())");
+         sql.append(" INSERT INTO tb_bbs(wname, subject, content, passwd, ip, grpno, indent, ansnum, regdt, secretp, writer) ");
+         sql.append(" VALUES(?,?,?,?,?,?,?,?,now(),?,?) ");
          
          pstmt = con.prepareStatement(sql.toString());
          pstmt.setString(1, dto.getWname());
@@ -279,6 +279,8 @@ public class BbsDAO {   //데이터베이스 관련 작업
          pstmt.setInt(6, grpno);            //1)단계에서 만든 그룹번호
          pstmt.setInt(7, indent);         //1)단계에서 만든 들여쓰기
          pstmt.setInt(8, ansnum);         //1)단계에서 만든 글순서
+         pstmt.setString(9, dto.getSecretp());
+         pstmt.setString(10, dto.getWriter());
          
          cnt = pstmt.executeUpdate();
          
@@ -415,12 +417,12 @@ public class BbsDAO {   //데이터베이스 관련 작업
 			sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
 			
          }else {                  //검색하는 경우 7)
-            sql.append(" SELECT bbsno, subject, wname, content, readcnt, grpno, ansnum, indent, regdt, secretp, writer, r ");
-            sql.append(" FROM ( ");
-            sql.append("       SELECT bbsno, subject, wname, content, readcnt, grpno, ansnum, indent, regdt, secretp, writer, @rownum := @rownum + 1 as r ");
-            sql.append("       FROM ( ");
-            sql.append("             SELECT bbsno, subject, wname, content, readcnt, grpno, ansnum, indent, regdt, secretp, writer ");
-            sql.append("             FROM tb_bbs ");
+ 			sql.append(" SELECT bbsno, subject, wname, content, readcnt, grpno, ansnum, indent, regdt, secretp, writer, r ");
+ 			sql.append(" FROM ( ");
+ 			sql.append("       SELECT bbsno, subject, wname, content, readcnt, grpno, ansnum, indent, regdt, secretp, writer, @rownum := @rownum + 1 as r ");
+ 			sql.append("       FROM ( ");
+ 			sql.append("             SELECT bbsno, subject, wname, content, readcnt, grpno, ansnum, indent, regdt, secretp, writer ");
+ 			sql.append("             FROM tb_bbs ");
 			
 			String search = "";
 			if(col.equals("subject_content")) {
@@ -434,11 +436,10 @@ public class BbsDAO {   //데이터베이스 관련 작업
 				search += " WHERE wname LIKE '%" + word + "%' ";
 			}//if end
 			sql.append(search);
-            sql.append("          ) AA, SELECT @rownum := 0 AS CC ");
+			sql.append("          ) AA, (SELECT @rownum := 0) AS CC ");
             sql.append("          ORDER BY grpno DESC, ansnum ASC ");
-            sql.append("       ) BB ");
-            sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
-
+			sql.append("       ) BB ");
+			sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
          }//if end      
          
                   

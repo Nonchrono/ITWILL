@@ -49,12 +49,18 @@
 		// 비밀글 여부를 가져와서 비밀글과 아닌 경우 구분하기
 		int secretp = Integer.parseInt(dto.getSecretp().trim());
 		
-		if (dto.getWriter().equals(s_id) && secretp == 1) { // 비밀글 - 로그인 작성자 동일
+		if (dto.getWriter().equals(s_id) && secretp == 1 && !(s_id.equals("guest"))) { // 비밀글 - 로그인 작성자 동일
 			%>
 			<%out.print("<img src='../images/lock.png'>");%>
 			<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>"><%=dto.getSubject()%></a>
 			<% 
-		} else if (dto.getWriter().equals(s_id) && secretp != 1) { // 비밀글x - 로그인 작성자 동일
+		} else if (s_id.equals("guest") && secretp == 1) { // 비밀글 - 비로그인
+			%>
+			<%out.print("<img src='../images/lock.png'>");%>
+			<a href="bbsSecret.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>">
+			[비밀글입니다]</a>
+			<%
+		}else if (dto.getWriter().equals(s_id) && secretp != 1) { // 비밀글x - 로그인 작성자 동일
 			%>
 			<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>"><%=dto.getSubject()%></a>
 			<%

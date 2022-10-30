@@ -5,14 +5,16 @@
 
 <!-- 본문 시작 bbsRead.jsp -->
 <h3>* 게시판 상세보기 *</h3>
-<p>
+
+<div class="container">
+<p style="text-align: right">
 	<a href="bbsForm.jsp">[글쓰기]</a>
 	&nbsp;&nbsp;
-	<a href="bbsList.jsp">[글목록]</a>
+	<a href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">[글목록]</a> <!-- 글목록으로 이동 -->
 </p>
-<div class="container">
 <%
 	int bbsno = Integer.parseInt(request.getParameter("bbsno"));
+	
 	//한줄에 해당하는 온전한 정보를 담으려면 dto
 	// 여러줄은 List
 	dto = dao.read(bbsno);
@@ -56,7 +58,7 @@
 		</table>
 		<br>
 		<input type="button" value="답변쓰기" class="btn btn-info" onclick="location.href='bbsReply.jsp?bbsno=<%=bbsno%>'">
-		<input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>'">
+		<input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>&secretp=<%=dto.getSecretp()%>&writer=<%=dto.getWriter()%>'">
 		<input type="button" value="삭제" class="btn btn-danger" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno%>'">
 <%
 	} // if end

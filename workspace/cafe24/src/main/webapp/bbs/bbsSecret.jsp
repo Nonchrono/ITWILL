@@ -12,7 +12,7 @@
 	
 %>
 <div class="container">
-	<form method="post" action="bbsSecretProc.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>&secretp=<%=secretp%>&writer=<%=dto.getWriter()%>" onsubmit="return pwCheck2()"> <!-- myscript.js -->
+	<form method="post" action="bbsSecretProc.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>&secretp=<%=secretp%>&writer=<%=writer%>" onsubmit="return pwCheck2()"> <!-- myscript.js -->
 	<input type="hidden" name="bbsno" value="<%=bbsno%>">
 	<input type="hidden" name="secretp" value="<%=secretp%>">
 		<table class="table">
