@@ -52,7 +52,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="./bbs/bbsList.jsp">게시판</a></li>
         <li><a href="./notice/noticeList.jsp">공지사항</a></li>
-        <li><a href="./member/loginForm.jsp">로그인</a></li>
+
+<%
+        String s_id2 = (String) session.getAttribute("s_id");
+        if (s_id2 == null || s_id2.equals("guest")) {
+%>
+          <li><a href='./member/loginForm.jsp'>로그인</a></li>
+<%
+        } else {
+%>
+          <li><a href='./member/logout.jsp'>로그아웃</a></li>
+<%
+        }
+%>
         <li><a href="./pds/pdsList.jsp">포토갤러리</a></li>
         <li><a href="./mail/mailForm.jsp">메일보내기</a></li>
       </ul>
