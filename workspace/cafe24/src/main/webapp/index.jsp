@@ -67,6 +67,7 @@
 %>
         <li><a href="./pds/pdsList.jsp">포토갤러리</a></li>
         <li><a href="./mail/mailForm.jsp">메일보내기</a></li>
+        <li><a href="./mypage/my-page.jsp">마이페이지</a></li>
       </ul>
     </div>
   </div>
