@@ -1,4 +1,4 @@
-package kr.co.itwill.spring04_mymelon;
+package kr.co.itwill;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

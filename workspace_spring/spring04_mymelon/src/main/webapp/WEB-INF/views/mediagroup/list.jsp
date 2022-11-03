@@ -35,10 +35,10 @@
         <c:forEach var="dto" items="${list}">
             <tr>
                 <td>${dto.mediagroupno}</td>
-                <td>${dto.title}</td>
+                <td><a href="../media/list.do?mediagroupno=${dto.mediagroupno}">${dto.title}</a></td>
                 <td>
-                    <input type="button" value="수정">
-                    <input type="button" value="삭제">
+                    <input type="button" value="수정" onclick="location.href='update.do?mediagroupno=${dto.mediagroupno}'">
+                    <input type="button" value="삭제" onclick="location.href='delete.do?mediagroupno=${dto.mediagroupno}'"> <!-- Get 방식 -->
                 </td>
             </tr>
         </c:forEach>
@@ -53,7 +53,8 @@
     <c:set var = "endPage" value="${requestScope.endPage}"/>
 
     <div class="content">
-        <!-- endPage는 5단위이기에 총 페이지가 end 페이지보다 작으면 그 수를 대입한다 -->
+        <!-- endPage는 10단위이기에 총 페이지가 end 페이지보다 작으면 그 수를 대입한다 -->
+        <!-- 즉, 만약 최종 페이지 수가 22라면 30까지 표시할 필요가 없으니 엔드 페이지 수를 22로 맞춘다 -->
         <c:if test="${endPage > pageCount}">
             <c:set var="endPage" value="${pageCount}"/>
         </c:if>
@@ -64,6 +65,7 @@
         </c:if>
 
         <!-- 현재 페이지 볼드체, 현재 페이지 외의 보이는 페이지 전부 이동 링크 걸기 -->
+        <!-- 현재 페이지가 아니라면 링크 걸기 (페이지 넘버 값을 가지고 간다) -->
         <c:forEach var="i" begin="${startPage}" end="${endPage}">
             <c:choose>
                 <c:when test="${pageNum == i}"><span style="font-weight: bold">${i}</span></c:when>
