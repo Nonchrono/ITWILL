@@ -11,9 +11,9 @@ public class Home {
         System.out.println("-----Hello 객체 생성 성공...");
     } // end
 
-    @RequestMapping(value = "/index.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/home.do", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "home";
     } // end
 
 } // class end

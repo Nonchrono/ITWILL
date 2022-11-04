@@ -24,7 +24,7 @@
     <div class="content">
         <input type="button" value="음원 등록" onclick="location.href='create.do?mediagroupno=${requestScope.mediagroupno}'">
         <input type="button" value="HOME" onclick="location.href='/home.do'">
-    </div>7777
+    </div>
 
     <table>
         <tr>
