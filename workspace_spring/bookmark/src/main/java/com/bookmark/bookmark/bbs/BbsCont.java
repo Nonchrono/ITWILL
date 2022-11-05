@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class BbsCont {
@@ -25,8 +26,10 @@ public class BbsCont {
 
         // int totalRowCount = dao.totalRowCount(); // 총 글갯수
 
-        List<BbsDTO> list = dao.list();
+        List<BbsDTO> list = null;
+        list = dao.list();
 
+        mav.addObject("list", list);
          return mav;
     } // list() end
 

@@ -16,6 +16,8 @@ mview    CHAR(1)       DEFAULT 'Y' NOT NULL,          -- 출력모드. 게시판
 -- 시퀀스 생성
 create sequence media_seq;
 
+DROP sequence media_seq;
+
 select * from media;
 
 commit;
@@ -24,3 +26,7 @@ commit;
 select * from media
 where mview = 'Y' and mediagroupno = ?
 order by mediano desc
+;
+
+drop table media
+;
