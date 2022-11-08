@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ba54181-d524-40a7-8474-14edfbc9a612" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/artifacts/cafe24_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/cafe24.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/cafe24/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/cafe24/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/cafe24/.idea/libraries/activation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/libraries/activation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/cafe24/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/cafe24/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/cafe24/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/cafe24/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/cafe24/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/cafe24/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.resources/.root/3.tree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_spring/.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/workspace_spring/.metadata/version.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/src/main/java/com/example/workspace_springboot/ServletInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/src/main/java/com/example/workspace_springboot/WorkspaceSpringbootApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace_springboot/src/test/java/com/example/workspace_springboot/WorkspaceSpringbootApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="6ba54181-d524-40a7-8474-14edfbc9a612" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Java202207/workpace_spring(gradle)",
+    "last_opened_file_path": "D:/Java202207/workspace_spring/bookmark",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
@@ -178,6 +144,7 @@
       <workItem from="1666270015717" duration="10000" />
       <workItem from="1666270087758" duration="59000" />
       <workItem from="1667181770927" duration="59000" />
+      <workItem from="1667608109744" duration="112000" />
     </task>
     <servers />
   </component>

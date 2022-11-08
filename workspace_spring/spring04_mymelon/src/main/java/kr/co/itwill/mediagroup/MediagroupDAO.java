@@ -26,8 +26,13 @@ public class MediagroupDAO {
         int cnt = 0;
         try {
             sql = new StringBuilder();
+            /*
             sql.append(" INSERT INTO mediagroup( mediagroupno, title ) ");
             sql.append(" VALUES( mediagroup_seq.nextval, ? ) ");
+            */
+
+            sql.append(" INSERT INTO mediagroup(mediagroupno, title)");
+            sql.append(" VALUES((select ifnull(max(mediagroupno),0)+1 from mediagroup as TB), ?)");
 
             // DB 연결이 이미 되어있다.
             cnt = jt.update(sql.toString(), dto.getTitle());
@@ -69,6 +74,7 @@ public class MediagroupDAO {
     public List<MediagroupDTO> list2(int start, int end) { // 페이징
         List<MediagroupDTO> list = null;
         try {
+            /*
             sql = new StringBuilder();
             sql.append(" SELECT AA.* ");
             sql.append(" FROM ( ");
@@ -80,6 +86,19 @@ public class MediagroupDAO {
             sql.append("              ) BB ");
             sql.append("        ) AA ");
             sql.append(" WHERE AA.RNUM >= " + start + " AND AA.RNUM <= " + end);
+            */
+
+            sql = new StringBuilder();
+            sql.append(" SELECT AA.* ");
+            sql.append(" FROM ( ");
+            sql.append("    SELECT @RNO := @RNO + 1 AS r, CC.* ");
+            sql.append("    FROM ( ");
+            sql.append("       SELECT mediagroupno, title ");
+            sql.append("       FROM mediagroup ");
+            sql.append("    ) CC, ( SELECT @RNO := 0 ) BB ORDER BY mediagroupno ");
+            sql.append(" ) AA ");
+            sql.append(" WHERE r >=" + start + " AND r <= " + end );
+            // 시작 행번호와 끝 행번호를 start와 end 변수에 담아 sql문 실행
 
             RowMapper<MediagroupDTO> rowMapper = new RowMapper<MediagroupDTO>() {
                 @Override

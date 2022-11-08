@@ -411,7 +411,10 @@ import org.springframework.web.multipart.MultipartFile;
                 }//if end
 
                 //make server full path to save
-                String serverFullPath = basePath + "\\" + fileName;
+                //String serverFullPath = basePath + "\\" + fileName;
+
+                //cafe24서버
+                String serverFullPath = basePath + "/" + fileName;
 
                 System.out.println("fileName: " + fileName);
                 System.out.println("serverFullPath: " + serverFullPath);
@@ -440,5 +443,7 @@ import org.springframework.web.multipart.MultipartFile;
         return fileName;
 
     }//saveFileSpring30() end
+
+
 
 }//class end

@@ -19,7 +19,7 @@
     <div class="title">음원 수정</div>
     <form name="frm" method="post" action="update.do" enctype="multipart/form-data">
       <input type="hidden" name="mediano" value="${dto.mediano}">
-      <input type="hidden" name="mediano" value="${dto.mediagroupno}">
+      <input type="hidden" name="mediano" value="${dto.mediagroupno}"> <!-- 내글번호 -->
       <table class='table'>
         <tr>
           <th>제목</th>
