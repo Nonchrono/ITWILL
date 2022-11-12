@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Nov 12 14:56:34 KST 2022
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1668232594996
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.mybatis\:mybatis\:jar\:sources\:3.2.2 from/to central (https\://repo.maven.apache.org/maven2)\: The operation was cancelled.

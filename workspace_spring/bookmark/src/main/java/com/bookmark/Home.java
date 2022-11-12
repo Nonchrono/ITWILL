@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Home {
 
     public Home() {
-        System.out.println("-----Hello 객체 생성 성공...");
+        System.out.println("-----Home() 객체 생성 성공...");
     } // end
 
     @RequestMapping(value = "/home.do", method = RequestMethod.GET)
