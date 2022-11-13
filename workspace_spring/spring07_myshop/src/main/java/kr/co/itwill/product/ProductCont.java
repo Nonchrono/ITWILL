@@ -105,12 +105,21 @@ public class ProductCont {
 
         String filename = "-";
         long filesize = 0;
+        String original_filename = map.get("original_filename").toString();
+
         if (img != null && !img.isEmpty()) {
             filename = img.getOriginalFilename();
             filesize = img.getSize();
             try {
                 ServletContext application = req.getSession().getServletContext();
                 String path = application.getRealPath("/storage");
+
+                File file = new File(path + "\\" +original_filename);
+
+                if(file.exists()) {
+                    file.delete();
+                    System.out.println("삭제 성공");
+                } // if end
 
                 img.transferTo(new File(path + "\\" + filename));
             } catch (Exception e) {

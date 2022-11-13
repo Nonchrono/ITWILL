@@ -63,6 +63,7 @@
         <tr>
             <td colspan="2" align="center">
                 <input type="hidden" name="product_code" value="${product.PRODUCT_CODE}">
+                <input type="hidden" name="original_filename" value="${product.FILENAME}">
                 <input type="button" value="상품수정" onclick="product_update()">
                 <input type="button" value="상품삭제" onclick="product_delete()">
             </td>
