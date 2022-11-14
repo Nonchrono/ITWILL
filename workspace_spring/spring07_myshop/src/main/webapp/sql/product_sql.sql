@@ -8,13 +8,16 @@ create table product
     description  varchar(2000),
     price        int default 0,
     filename     varchar(500),
-    filesize     long DEFAULT 0 NOT NULL
+    filesize     number DEFAULT 0 NOT NULL,
+    regdate date DEFAULT sysdate
 );
 
 drop table product;
 
 -- 상품 시퀀스
 create sequence product_seq;
+
+drop sequence product_seq;
 
 -- 커밋
 commit;

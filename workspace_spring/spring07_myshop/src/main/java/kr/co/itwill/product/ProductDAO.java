@@ -23,7 +23,7 @@ public class ProductDAO {
     } // list() end
 
     public void insert(Map<String, Object> map) {
-        sqlSession.insert("prod1uct.insert", map);
+        sqlSession.insert("product.insert", map);
     } // insert() end
 
     public List<Map<String, Object>> search(String product_name) {
