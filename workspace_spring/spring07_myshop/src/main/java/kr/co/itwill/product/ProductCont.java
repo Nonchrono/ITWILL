@@ -56,7 +56,7 @@ public class ProductCont {
                 // 어플리케이션이 아니라 리퀘스트여도 되지만 추천은 어플리케이션 // 실제 물리적인 경로
                 // System.out.println(path);
                 // d:\java202202\workspace_spring\spring07_myshop\src\main\webapp\storage
-                img.transferTo(new File(path + "\\" + filename)); //  파일 저장
+                img.transferTo(new File(path + "/" + filename)); //  파일 저장
             } catch (Exception e) {
                 e.printStackTrace(); // 에러메세지 출력하기 sout(e)랑 똑같은 명령어
             } // try end
@@ -109,30 +109,31 @@ public class ProductCont {
         if (img != null && !img.isEmpty()) {
             filename = img.getOriginalFilename();
             filesize = img.getSize();
+
             try {
                 ServletContext application = req.getSession().getServletContext();
                 String path = application.getRealPath("/storage");
 
-                File file = new File(path + "\\" +original_filename);
+                File file = new File(path + "/" +original_filename);
 
                 if(file.exists()) {
                     file.delete();
                     System.out.println("삭제 성공");
                 } // if end
 
-                img.transferTo(new File(path + "\\" + filename));
+                img.transferTo(new File(path + "/" + filename));
+
             } catch (Exception e) {
                 e.printStackTrace();
             } // try end
         } else {
             String product_code = map.get("product_code").toString();
             Map<String, Object> product = productDAO.detail(product_code);
-            filename = product.get("FILENAME").toString();
+            filename = product.get("filename").toString();
             // filesize = (long)product.get("FILESIZE");
-            filesize=Long.parseLong(product.get("FILESIZE").toString());
+            filesize=Long.parseLong(product.get("filesize").toString());
 
         } // if end
-
 
         map.put("filename", filename);
         map.put("filesize", filesize);
@@ -147,7 +148,7 @@ public class ProductCont {
         if (filename != null && !filename.equals("-")) {
             ServletContext application = req.getSession().getServletContext();
             String path = application.getRealPath("/storage");
-            File file = new File(path + "\\" + filename);
+            File file = new File(path + "/" + filename);
             if (file.exists()) {
                 file.delete();
             } // if end

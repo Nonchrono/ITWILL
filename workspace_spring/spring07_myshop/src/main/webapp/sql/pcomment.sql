@@ -20,15 +20,15 @@ create table pcomment
 -- MariaDB ver.
 create table pcomment
 (
-    cno      int primary key     -- 댓글번호
+    cno      int AUTO_INCREMENT primary key     -- 댓글번호
     ,
     pno      int not null        -- 부모글 번호
     ,
-    content  NVARCHAR not null -- 댓글내용
+    content  VARCHAR(5000) not null -- 댓글내용
     ,
-    wname    NVARCHAR not null -- 작성자
+    wname    VARCHAR(100) not null -- 작성자
     ,
-    regdate  date   default sysdate -- 작성일
+    regdate  datetime   default now() -- 작성일
 );
 
 -- 테이블 드랍

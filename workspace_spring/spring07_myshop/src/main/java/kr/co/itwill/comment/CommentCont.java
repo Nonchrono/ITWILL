@@ -3,6 +3,7 @@ package kr.co.itwill.comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,5 +39,19 @@ public class CommentCont {
         return commentDAO.commentlist(pno);
     } // list() end
 
+    @RequestMapping("/delete/{cno}")
+    @ResponseBody
+    private int mCommentServiceDelete(@PathVariable int cno) throws Exception {
+        return commentDAO.commentDelete(cno);
+    } // mCommentServiceDelete() end
+
+    @RequestMapping("/update")
+    @ResponseBody
+    private int mCommentServiceUpdateProc(@RequestParam int cno, @RequestParam String content) throws Exception {
+        CommentDTO comment = new CommentDTO();
+        comment.setCno(cno);
+        comment.setContent(content);
+        return commentDAO.commentUpdate(comment);
+    } // update() end
 
 } // class end

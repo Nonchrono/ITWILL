@@ -6,7 +6,7 @@
 
     <insert id="insert" parameterType="kr.co.itwill.comment.CommentDTO">
         INSERT INTO pcomment(cno, pno, content, wname)
-        VALUES (pcomment_seq.nextval, #{pno}, #{content}, #{wname})
+        VALUES ((select ifnull(max(cno),0)+1 from pcomment as cm), #{pno}, #{content}, #{wname})
     </insert>
 
     <select id="list" resultType="kr.co.itwill.comment.CommentDTO" parameterType="int">
@@ -14,5 +14,16 @@
         FROM pcomment
         WHERE pno=#{pno}
     </select>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM pcomment
+        WHERE cno=#{cno}
+    </delete>
+
+    <update id="update" parameterType="kr.co.itwill.comment.CommentDTO">
+        UPDATE pcomment
+        SET content=#{content}
+        WHERE cno=#{cno}
+    </update>
 
 </mapper>
