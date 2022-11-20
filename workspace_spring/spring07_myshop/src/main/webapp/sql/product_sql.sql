@@ -1,5 +1,11 @@
 -- product_sql.sql
 
+show databases;
+
+create database practice;
+
+use practice;
+
 -- 상품 테이블
 create table product
 (

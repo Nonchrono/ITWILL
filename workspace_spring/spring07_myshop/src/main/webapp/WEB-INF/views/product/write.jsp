@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <title>write.jsp</title>
     <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <script src="../ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <h3>상품등록</h3>
@@ -32,7 +33,12 @@
         </tr>
         <tr>
             <td>상품설명</td>
-            <td><textarea rows="5" cols="60" name="description"></textarea></td>
+            <td><textarea rows="5" cols="60" name="description" id="description"></textarea></td>
+            <script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
+            CKEDITOR.replace('description',
+                {filebrowserUploadUrl:'/product/imageUpload'
+                });
+            </script>
         </tr>
         <tr>
             <td>상품사진</td>
@@ -45,6 +51,8 @@
         </tr>
     </table>
 </form>
+
+
 
 </body>
 </html>

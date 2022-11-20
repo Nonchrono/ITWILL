@@ -43,4 +43,5 @@ drop sequence pcomment_seq;
 commit;
 
 -- 전체 조회
-select * from pcomment;
+select * from pcomment
+;

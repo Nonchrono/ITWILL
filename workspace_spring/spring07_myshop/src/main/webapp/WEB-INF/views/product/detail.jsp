@@ -56,7 +56,9 @@
             </tr>
             <tr>
                 <td>상품설명</td>
-                <td><textarea rows="5" cols="60" name="description">${product.description}</textarea></td>
+                <td>
+                    <div rows="5" cols="60" name="description" id="description">${product.description}</div>
+                </td>
             </tr>
             <tr>
                 <td>상품사진</td>

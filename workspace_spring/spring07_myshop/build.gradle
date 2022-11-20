@@ -29,6 +29,10 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.58'
+
+
     // JSTL
     // https://mvnrepository.com/artifact/javax.servlet/jstl
     implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
@@ -36,6 +40,8 @@ dependencies {
     // json simple 라이브러리
     // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+    implementation 'commons-io:commons-io:2.11.0'    /* Apache commons-io */
 
     // Apache Commons FileUpload 파일 업로드할 때 필요한 라이브러리
     // https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload

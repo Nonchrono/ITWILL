@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362b1519-54d1-4bca-bdc3-2b68dacc1476" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/activation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../workspace/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cafe24/src/main/java/net/bbs/BbsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cafe24/src/main/java/net/bbs/BbsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cafe24/src/main/webapp/bbs/bbsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../cafe24/src/main/webapp/bbs/bbsList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cafe24/src/main/webapp/pds/pdsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../cafe24/src/main/webapp/pds/pdsList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace_spring/spring04_mymelon/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace_spring/spring04_mymelon/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace_spring/spring04_mymelon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace_spring/spring04_mymelon/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace_spring/spring07_myshop/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace_spring/spring07_myshop/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +35,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Java202207/workspace/cafe24",
+    "last_opened_file_path": "D:/Java202207/workspace_spring/spring07_myshop2",
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
@@ -59,6 +55,8 @@
       <workItem from="1666574117876" duration="44000" />
       <workItem from="1666680634019" duration="5534000" />
       <workItem from="1666744426242" duration="2975000" />
+      <workItem from="1668860115731" duration="45000" />
+      <workItem from="1668860187287" duration="16000" />
     </task>
     <servers />
   </component>
