@@ -13,5 +13,4 @@ public class CommentDTO {
     private String content;
     private String wname;
     private String regdate;
-    private Long filesize;
 }
